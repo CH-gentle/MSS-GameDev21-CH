@@ -1,8 +1,13 @@
 <h1 align=center>T3A05-Forms-Charles.html</h1>
+<br><br>
 <iframe width="560" height="315" 
 src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" 
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe><br><br>
+
+<audio controls autoplay muted>
+  <source src="Never Gonna Give You Up Original.mp3" type="audio/mpeg">
+</audio><br>
 
 <span style="position:absolute; left:650; top:100; border-color:yellow; 
 border-style:groove; border-width:50; width:500"  }" >
@@ -14,17 +19,25 @@ Number: <input id="myNum01" type=number value=114514><br>
 
 Password: <input type="passwrrd"><br>
 
-Male: <input type="checkbox">
-Female: <input type="checkbox"><br>
+Remeber me<input type="checkbox">
+Remeber password <input type="checkbox"><br>
 
-Happy: <input type="radio">
-Just so so:<input type="radio">
-Sad: <input type="radio"><br>
+<input type="radio" id="male" name="gender" value="male">
+<label for="male">Male</label><br>
+<input type="radio" id="female" name="gender" value="female">
+<label for="female">Female</label><br>
+<input type="radio" id="other" name="gender" value="other">
+<label for="other">Other</label><br>
+
+Happy: <input type="radio" id="happy" name="mood" value="happy">
+Just so so:<input type="radio" id="just so so" name="mood" value="soso">
+Sad: <input type="radio" id="just so so" name="mood" value="sad"><br>
 
 Reset: <input type="reset">
 Submit: <input type="submit"><br>
 
 <select size=1>
+	<option value="---">---
 	<option value="123456">AAA
 	<option value="qwer">BBB
 	<option value="114514">CCC
@@ -33,7 +46,14 @@ Submit: <input type="submit"><br>
 
 <textarea id="myArea01" rows=5 cols=50>
 Your feelings
-</textarea><br><br>
+</textarea><br>
+Are you okay with being Rickroll again?
+<select size=1>
+	<option value="---">---
+	<option value="1">Yes
+	<option value="2">No
+	<option value="3">Whatever
+</select><br><br>
 
 </span >
 
