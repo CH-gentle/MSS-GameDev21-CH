@@ -29,6 +29,15 @@ onDblclick: <input type=button Value="onDblclick" onDblclick="{
 	document.getElementById('mySpan1').innerHTML= 'onDblclick activated'
 	}"><br><br>
 onKeyDown: press 'q'<br><br>
+onMousemove: <span onMousemove="{
+	document.getElementById('mySpan2').innerHTML= 'onMousemove activated'
+	}">Move the cursor over. </span><br><br>
+onMouseout: <span onMouseout="{
+	document.getElementById('mySpan2').innerHTML= 'onMouseout activated'
+	}">Move the cursor over, then move out. </span><br><br>
+onMousewheel: <span onMousewheel="{
+	document.getElementById('mySpan2').innerHTML= 'onMousewheel activated'
+	}">Rotate the mouse wheel. </span><br><br>
 onPlay, onVolumechange, onPause, onCanplay, onCanplaythrough, onWaiting: 
 Try to play, stop, make the audio load and change the volume of the audio. <br>
 <audio controls
