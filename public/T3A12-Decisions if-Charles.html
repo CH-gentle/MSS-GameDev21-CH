@@ -1,0 +1,125 @@
+<h1 align=center>T3A12-Decisions if-Charles</h1>
+<pre>
+|| means OR
+&& means AND
+! means NOT
+</pre>
+1. <input id="myText01" type=text value=3><br>
+<input type=button value="Show X" onClick="{
+	x = document.getElementById('myText01').value
+	myTemp = '......'
+	if (x >= 2){myTemp = 'x >= 2'}
+	document.getElementById('mySpan01').innerHTML = myTemp
+}"><br>
+<span id="mySpan01">...</span><br><br>
+
+2. <input id="myText02" type=text value=1><br>
+<input type=button value="Show X" onClick="{
+	x = document.getElementById('myText02').value
+	myTemp = '......'
+	if (x*2 >= 2){myTemp = '2x >= 2'}
+	document.getElementById('mySpan02').innerHTML = myTemp
+}"><br>
+<span id="mySpan02">...</span><br><br>
+
+3. <input id="myText03" type=text value=114514><br>
+<input type=button value="Show X" onClick="{
+	x = document.getElementById('myText03').value
+	myTemp = '......'
+	if (x >= 114514){
+	myTemp = 'x >= 114514'
+	}else{
+	myTemp = 'Not the correct number'
+	}
+	document.getElementById('mySpan03').innerHTML = myTemp
+}"><br>
+<span id="mySpan03">...</span><br><br>
+
+4. <input id="myText04" type=text value=3><br>
+<input type=button value="Show X" onClick="{
+	x = document.getElementById('myText04').value
+	myTemp = '......'
+	if (x*x >= 9){
+	myTemp = 'x^2 >= 9'
+	}else{
+	myTemp = 'Larger!'
+	}
+	document.getElementById('mySpan04').innerHTML = myTemp
+}"><br>
+<span id="mySpan04">...</span><br><br>
+
+5. <input id="myText05a" type=text value=4><br>
+<input id="myText05b" type=text value=5><br>
+<input type=button value="Show X" onClick="{
+	x = document.getElementById('myText05a').value
+	y = document.getElementById('myText05b').value
+	myTemp = '......'
+	if (y > x){
+	myTemp = 'y > x'
+	}else{
+	myTemp = 'Try again'
+	}
+	document.getElementById('mySpan05').innerHTML = myTemp
+}"><br>
+<span id="mySpan05">...</span><br><br>
+
+
+6. <input id="myText06a" type=text value=4><br>
+<input id="myText06b" type=text value=-3><br>
+<input type=button value="Show X" onClick="{
+	x = document.getElementById('myText06a').value
+	y = document.getElementById('myText06b').value
+	myTemp = '......'
+	if (x >= 2 && y <= -2){
+	myTemp = 'x >= 2 & y <= -2'
+	}else{
+	myTemp = 'Try again'
+	}
+	document.getElementById('mySpan06').innerHTML = myTemp
+}"><br>
+<span id="mySpan06">...</span><br><br>
+
+7. <input id="myText07a" type=text value=4><br>
+<input id="myText07b" type=text value=7><br>
+<input type=button value="Show X" onClick="{
+	x = document.getElementById('myText07a').value
+	y = document.getElementById('myText07b').value
+	myTemp = '......'
+	if (2*x >= y || y <= 0){
+	myTemp = '2x >= y or y <= 0'
+	}else{
+	myTemp = 'Try again'
+	}
+	document.getElementById('mySpan07').innerHTML = myTemp
+}"><br>
+<span id="mySpan07">...</span><br><br>
+
+8. <input id="myText08a" type=text value=4><br>
+<input id="myText08b" type=text value=2><br>
+<input type=button value="Show X" onClick="{
+	x = parseFloat(document.getElementById('myText08a').value)
+	y = document.getElementById('myText08b').value
+	myTemp = '......'
+	if (Math.sqrt(x) == y && y >= 0){
+	myTemp = '&#8730; x = y & y >= 0'
+	}else{
+	myTemp = 'Try again'
+	}
+	document.getElementById('mySpan08').innerHTML = myTemp
+}"><br>
+<span id="mySpan08">...</span><br><br>
+
+9. <input id="myText09a" type=text value=9><br>
+<input id="myText09b" type=text value=2><br>
+<input type=button value="Show X" onClick="{
+	x = document.getElementById('myText09a').value
+	y = document.getElementById('myText09b').value
+	myTemp = '......'
+	if (Math.max(x, y) - Math.min(x, y) >= x - y ){
+	myTemp = 'Max -Min >= x - y '
+	}else{
+	myTemp = 'Try again'
+	}
+	document.getElementById('mySpan09').innerHTML = myTemp
+}"><br>
+<span id="mySpan09">...</span><br><br>
