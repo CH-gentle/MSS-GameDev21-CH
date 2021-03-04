@@ -209,36 +209,46 @@ class myCat extends myAnimal {
 
 <b>10</b><br>
 Simple Caculator<br>
-<input id="myText10a" type=text value=0><br>
-<input id="myText10b" type=text value=0><br>
-<span id="mySpan10">...</span><br>
+x<input id="myText10a" type=text value=0><br>
+y<input id="myText10b" type=text value=0><br>
+Output<input id="mySpan10" type=text value=0><br>
+<input type =button value="Output &#8594; x" onclick="{
+	a = document.getElementById('mySpan10').value
+	document.getElementById('myText10a').value= a
+	}">
+<input type =button value="C" onclick="{
+	x = 0
+	document.getElementById('myText10a').value= x
+	document.getElementById('myText10b').value= x
+	document.getElementById('mySpan10').value= x
+	}"><br>
 <input type =button value="+" onclick="{
 	x = document.getElementById('myText10a').value
 	y = document.getElementById('myText10b').value
-	document.getElementById('mySpan10').innerHTML= parseFloat(x) + parseFloat(y)
+	document.getElementById('mySpan10').value= parseFloat(x) + parseFloat(y)
 	}">
 <input type =button value="-" onclick="{
 	x = document.getElementById('myText10a').value
 	y = document.getElementById('myText10b').value
-	document.getElementById('mySpan10').innerHTML= parseFloat(x) - parseFloat(y)
+	document.getElementById('mySpan10').value= parseFloat(x) - parseFloat(y)
 	}"><br>
 <input type =button value="*" onclick="{
 	x = document.getElementById('myText10a').value
 	y = document.getElementById('myText10b').value
-	document.getElementById('mySpan10').innerHTML= parseFloat(x) * parseFloat(y)
+	document.getElementById('mySpan10').value= parseFloat(x) * parseFloat(y)
 	}">
 <input type =button value="/" onclick="{
 	x = document.getElementById('myText10a').value
 	y = document.getElementById('myText10b').value
-	document.getElementById('mySpan10').innerHTML= parseFloat(x) / parseFloat(y)
+	document.getElementById('mySpan10').value= parseFloat(x) / parseFloat(y)
 	}"><br>
 <input type =button value="X^2" onclick="{
 	x = document.getElementById('myText10a').value
 	y = document.getElementById('myText10b').value
-	document.getElementById('mySpan10').innerHTML= parseFloat(x) * parseFloat(x)
+	document.getElementById('mySpan10').value= parseFloat(x) * parseFloat(x)
 	}">
 <input type =button value="&#8730; x" onclick="{
 	x = document.getElementById('myText10a').value
 	y = document.getElementById('myText10b').value
-	document.getElementById('mySpan10').innerHTML= Math.sqrt(x)
+	document.getElementById('mySpan10').value= Math.sqrt(x)
 	}"><br>
