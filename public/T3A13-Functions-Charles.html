@@ -1,0 +1,36 @@
+<h1 align=center>T3A13-Functions-Charles.html</h1>
+<h3>Version number: 0.0.1</h3>
+
+<script>
+function myBaFun01(){
+	document.getElementById('mySpan01').innerHTML = "Never gonna give you up~"
+}
+function myAdFun01(x,y){
+	return x*y
+}
+function myAdFun02(x,y){
+	return x * Math.sqrt(y)
+}
+</script>
+
+<input type=button value="Run Ba.function" onClick="{
+	//alert('button works')
+	myBaFun01()
+}"><br><br>
+
+x <input id="myText01" type=text value=3><br>
+y <input id="myText02" type=text value=9><br><br>
+
+<input type=button value="Run Ad.function x*y with (4,9)" onClick="{
+	document.getElementById('mySpan01').innerHTML = myAdFun01(4,9)
+}"><br>
+
+<input type=button value="Run Ad.function x*y with input" onClick="{
+	document.getElementById('mySpan01').innerHTML = myAdFun01(document.getElementById('myText01').value,document.getElementById('myText02').value)
+}"><br>
+
+<input type=button value="Run Ad.function x*&#8730; y with input" onClick="{
+	document.getElementById('mySpan01').innerHTML = myAdFun02(document.getElementById('myText01').value,document.getElementById('myText02').value)
+}"><br><br>
+
+Output: <span id="mySpan01">...</span><br><br>
