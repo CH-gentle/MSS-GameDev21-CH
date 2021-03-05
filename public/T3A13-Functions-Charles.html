@@ -5,17 +5,34 @@
 function myBaFun01(){
 	document.getElementById('mySpan01').innerHTML = "Never gonna give you up~"
 }
+function myBaFun02(){
+	document.getElementById('myText01').value = 114514
+}
 function myAdFun01(x,y){
 	return x*y
 }
 function myAdFun02(x,y){
 	return x * Math.sqrt(y)
 }
+function myAdFun03(x,y){
+	return Math.max(x,y)
+}
+function myAdFun04(x,y){
+	return Math.min(x,y)
+}
+function myAdFun05(x){
+	return x*x
+}
+function myAdFun06(x,y){
+	return x-y
+}
 </script>
 
-<input type=button value="Run Ba.function" onClick="{
-	//alert('button works')
+<input type=button value="Run Ba.function 01" onClick="{
 	myBaFun01()
+}"><br>
+<input type=button value="Run Ba.function02" onClick="{
+	myBaFun02()
 }"><br><br>
 
 x <input id="myText01" type=text value=3><br>
@@ -25,12 +42,28 @@ y <input id="myText02" type=text value=9><br><br>
 	document.getElementById('mySpan01').innerHTML = myAdFun01(4,9)
 }"><br>
 
+<input type=button value="Run Ad.function x-y with input" onClick="{
+	document.getElementById('mySpan01').innerHTML = myAdFun06(document.getElementById('myText01').value,document.getElementById('myText02').value)
+}"><br>
+
 <input type=button value="Run Ad.function x*y with input" onClick="{
 	document.getElementById('mySpan01').innerHTML = myAdFun01(document.getElementById('myText01').value,document.getElementById('myText02').value)
 }"><br>
 
 <input type=button value="Run Ad.function x*&#8730; y with input" onClick="{
 	document.getElementById('mySpan01').innerHTML = myAdFun02(document.getElementById('myText01').value,document.getElementById('myText02').value)
+}"><br>
+
+<input type=button value="Run Ad.function Max with input" onClick="{
+	document.getElementById('mySpan01').innerHTML = myAdFun03(document.getElementById('myText01').value,document.getElementById('myText02').value)
+}"><br>
+
+<input type=button value="Run Ad.function Min with input" onClick="{
+	document.getElementById('mySpan01').innerHTML = myAdFun04(document.getElementById('myText01').value,document.getElementById('myText02').value)
+}"><br>
+
+<input type=button value="Run Ad.function x^2 with input" onClick="{
+	document.getElementById('mySpan01').innerHTML = myAdFun05(document.getElementById('myText01').value)
 }"><br><br>
 
 Output: <span id="mySpan01">...</span><br><br>
