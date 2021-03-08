@@ -1,0 +1,21 @@
+<h1 align=center>T3A14-For Loop-Charles.html</h1>
+
+Store this input into x:
+<input id="myText01" type=text value=12><br><br>
+
+<input type=button value="Loop with x" onclick="{
+
+let myTemp='';
+for(let i=0; i<parseInt(document.getElementById('myText01').value); i++){
+
+if(i>=5 && i<=10){
+myTemp += '<b style=color:blue>' + 'Loop Number: ' + i + '</b><br>'
+}else{
+myTemp += 'Loop Number: ' + i + '<br>'
+}
+}
+document.getElementById('mySpan01').innerHTML = myTemp
+
+}"><br><br>
+
+<span id="mySpan01">...</span><br><br>
