@@ -1,0 +1,28 @@
+<h1 align=center>T3A15-Arrays-Charles.html</h1>
+Version 1.0.0<br><br>
+<input id="myText01" type=text value=2><br>
+
+<input type=button value="Make and Show Array with input(0~3)" onClick="{
+	x = document.getElementById('myText01').value
+	document.myArray = new Array
+	document.myArray[0] = 2333;
+	document.myArray[1] = 6666;
+	document.myArray[2] = 114514;
+	document.myArray[3] = 'Aluba';
+
+	document.getElementById('mySpan01').innerHTML = '['+ x +'] value is: '+document.myArray[x]
+}"><br><br>
+
+<input id="myText02" type=text value=3><br>
+
+<input type=button value="Loop Through Array with input(0~4)" onClick="{
+	x = document.getElementById('myText02').value
+	myTemp = ''
+	for (i=0; i<x; i++){
+	myTemp += 'document.myArray[' + i + '] is: '+ document.myArray[i] + '<br>'
+	}
+	document.getElementById('mySpan01').innerHTML = myTemp
+}"<br><br>
+
+Output: <br>
+<span id="mySpan01">...</span><br><br>
