@@ -1,0 +1,20 @@
+<h1 align=center>T3A16-Objects-Charles.html</h1>
+Version 1.4.0<br>
+
+Enter an Name into the object: <input id="myText02" type=text value=Mark><br><br>
+Enter an age into the object: <input id="myText01" type=text value=17><br><br>
+
+<input type=button value="Make and Show Object" onClick="{
+	x = document.getElementById('myText01').value
+	y = document.getElementById('myText02').value
+	myObject = {
+	'firstName' : y,
+	'age' : x
+	} 
+document.getElementById('mySpan01').innerHTML ='myObject.firstName: ' + myObject.firstName
+document.getElementById('mySpan02').innerHTML ='myObject.age: ' + myObject.age
+}"><br><br>
+
+<span id="mySpan01">...</span><br><br>
+
+<span id="mySpan02">...</span><br><br>
