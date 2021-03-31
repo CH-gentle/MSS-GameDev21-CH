@@ -1,5 +1,5 @@
 <h1 align=center>T3A17-Bouns Class-Charles.html</h1>
-Version1.3.0<br><br>
+Version2.1.0<br><br>
 
 Enter a name into the class: <input id="myText02" type=text value='Mark' ><br>
 Enter an age into the class: <input id="myText01" type=text value=6 ><br>
@@ -21,6 +21,28 @@ class myAnimal {
    myPet = new myAnimal(y, x)
    myPet.myShow() 
                                                                           
-}"><br><br>
+}"><br>
+
+<input id="myButton131" type="button" value="Extend a class myAnimal and run the method myShow()" onclick="{
+     class myAnimal {
+    constructor(passName, passAge) {
+       this.myName = passName;
+       this.myAge = passAge;
+    }
+    myShow(){
+       document.getElementById('myDiv131').innerHTML = 'Hello '+ this.myName + ', You are ' + this.myAge + ' years old. '
+    }
+ } 
+
+     class myCat extends myAnimal {                                                                      
+     myShow(){
+       document.getElementById('myDiv131').innerHTML = this.myName + ' is a great cat who is ' + this.myAge + ' years old. '
+    }                                                                   
+}
+   x = document.getElementById('myText01').value
+   y = document.getElementById('myText02').value
+   myPet = new myCat(y, x)
+   myPet.myShow() 
+}"><br>
 
 <div id='myDiv131'>...</div><br>
