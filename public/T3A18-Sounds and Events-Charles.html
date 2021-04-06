@@ -1,0 +1,98 @@
+<body 
+onLoad="{
+	document.getElementById('mySpan2').innerHTML= 'onLoad activated'
+	}"
+onKeyDown="{
+	let myAlphaKey = event. key
+	if (myAlphaKey == 'a') {
+	document.getElementById('mySpan2').innerHTML= 'onKeyDown activated'
+	}
+}">
+<script> 
+let mySound1 = new Audio('Never Gonna Give You Up Original.mp3') 
+let mySound2 = new Audio('Hello.m4a') 
+let mySound3 = new Audio('Yeh.m4a') 
+</script>
+<h1 align=center>T3A18-Sounds and Events-Charles.html</h1>
+Version 1.2.4<br><br>
+
+Output span 1: <span id="mySpan1">. . .</span><br>
+Output span 2: <span id="mySpan2">. . .</span><br>
+Output span 3: <span id="mySpan3">. . .</span><br><br>
+
+<b onClick="{
+	mySound2.play()
+}">Click it to hear a sound!</b><br><br>
+
+Change the following: <input type=text value=5 onChange="{
+	document.getElementById('mySpan1').innerHTML= 'onChange activated'
+}"><br><br>
+
+onMouseover: <span onMouseover="{
+	mySound3.play()
+	}">Mouseover here for sound!</span><br><br>
+onSelect: <input type=text value="Select here!" onSelect="{
+	document.getElementById('mySpan1').innerHTML= 'onSelect activated'
+	}"><br><br>
+onBlur: <span onBlur="{
+	document.getElementById('mySpan1').innerHTML= 'onBlur activated'
+	}">You need to wait  for this one. </span><br><br>
+onDblclick: <input type=button Value="onDblclick for sound" onDblclick="{
+	mySound1.play()
+	}"><br><br>
+onKeyDown: press 'a'<br><br>
+onPlay, onVolumechange, onPause, onCanplay, onCanplaythrough, onWaiting: 
+Try to play, stop, make the audio load and change the volume of the audio. <br>
+<audio controls
+onPlay="{
+	document.getElementById('mySpan1').innerHTML= 'onPlay activated'
+	}"
+onVolumechange="{
+	document.getElementById('mySpan1').innerHTML= 'onVolumechange activated'
+	}"
+onPause="{
+	document.getElementById('mySpan2').innerHTML= 'onPause activated'
+	}"
+onCanplay="{
+	document.getElementById('mySpan1').innerHTML= 'onCanplay activated'
+	}"
+onCanplaythrough="{
+	document.getElementById('mySpan3').innerHTML= 'onCanplaythrough activated'
+	}"
+onWaiting="{
+	document.getElementById('mySpan2').innerHTML= 'onWaiting activated'
+	}">
+  <source src="Never Gonna Give You Up Original.mp3" type="audio/mpeg">
+</audio><br><br>
+
+onSubmit: Press 'Submit'
+<form onSubmit="{
+	document.getElementById('mySpan2').innerHTML= 'onSubmit activated'
+	}">
+  <input type="submit">
+</form><br>
+
+onWheel: <span onWheel="{document.getElementById('mySpan1').innerHTML= 'onWheel activated'}">Scroll over here!</span><br><br>
+
+
+<ul>Other events you could use on any web page tag:
+<font color=green>
+<li>onClick
+<li>onWheel
+<li>onDblClick
+<li>onMouseOver
+<li><font color="green">onChange</font>
+<li>onSelect
+<li>onBlur
+<li>onKeyDown
+<li>onPlay
+<li>onVolumechange
+<li>onPause
+<li>onCanplay
+<li>onCanplaythrough
+<li>onWaiting
+<li>onLoad
+<li>onSubmit
+</font>
+
+</body>
