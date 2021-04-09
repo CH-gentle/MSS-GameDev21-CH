@@ -1,22 +1,33 @@
 <h1 align=center>T3A15-Arrays-Charles.html</h1>
-Version 1.3.2<br><br>
+Version 1.4.1<br><br>
+
+Array[0]<input id="myText02" type=text value='a'><br>
+Array[1]<input id="myText03" type=text value='b'><br>
+Array[2]<input id="myText04" type=text value='c'><br>
+Array[3]<input id="myText05" type=text value='d'><br><br>
+
+
 <input id="myText01" type=text value=2><br>
 
 <input type=button value="Make and Show Array with input(0~3)" onClick="{
 	x = document.getElementById('myText01').value
+	a = document.getElementById('myText02').value
+	b = document.getElementById('myText03').value
+	c = document.getElementById('myText04').value
+	d = document.getElementById('myText05').value
 	document.myArray = new Array
-	document.myArray[0] = 2333;
-	document.myArray[1] = 6666;
-	document.myArray[2] = 114514;
-	document.myArray[3] = 'Aluba';
+	document.myArray[0] = a;
+	document.myArray[1] = b;
+	document.myArray[2] = c;
+	document.myArray[3] = d;
 
 	document.getElementById('mySpan01').innerHTML = '['+ x +'] value is: '+document.myArray[x]
 }"><br><br>
 
-<input id="myText02" type=text value=3><br>
+<input id="myText06" type=text value=3><br>
 
 <input type=button value="Loop Through Array with input(0~4)" onClick="{
-	x = document.getElementById('myText02').value
+	x = document.getElementById('myText06').value
 	myTemp = ''
 	for (i=0; i<x; i++){
 	myTemp += 'document.myArray[' + i + '] is: '+ document.myArray[i] + '<br>'
