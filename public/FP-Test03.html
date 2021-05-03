@@ -1,12 +1,10 @@
 <script>
-document.myX1move = 8
-document.myX2move = 5
+document.myXmove = 10
+document.myYmove = 5
 
-document.myX1speed = 50
-document.myX2speed = 50 
+document.mySpeed = 50
 
-document.myX1timer = 0
-document.myX2timer = 0
+document.myTimer = 0;
 
 function myHitOther(my1,my2){
    left1   = parseInt(document.getElementById(my1).style.left)
@@ -118,11 +116,11 @@ function myCheckAll(){
 	myScoreAdd()
 	}
 	if(myHitOther('my1','tar4')){
-	mySpawn('tar4')
+	mySpawn('my1')
 	myScoreAdd()
 	}
 	if(myHitOther('my1','tar5')){
-	mySpawn('tar5')
+	mySpawn('my1')
 	myScoreAdd()
 	}
 	if(myHitOther('my1','tar6')){
@@ -148,45 +146,20 @@ function myCheckAll(){
 	alert('Mr. Ellis: How dare you broke my flower pot!')
 	location = 'https://ch-gentle.github.io/MSS-GameDev21-CH/public/T4A01-Final%20Project%20Level01-Charles.html'
 	}
-	if (parseInt(document.getElementById('tar2').style.left) < 0) {
-	document.myX1move = document.myX1move * -1
-	console.log('tar2 * -1')
+
+	if (parseInt(document.getElementById('tar4').style.left) < 0
+	|| parseInt(document.getElementById('tar4').style.left) + 50 > window.innerWidth
+	|| myHitOther('tar4', 'myBar01')
+	|| myHitOther('tar4', 'myBar02')
+	|| myHitOther('tar4', 'myBar03')) {
+	document.myXmove = document.myXmove * -1
 	}
-	if (parseInt(document.getElementById('tar2').style.left) + 50 > window.innerWidth) {
-	document.myX1move = document.myX1move * -1
-	console.log('tar2 * -1')
-	}
-	if(myHitOther('tar2', 'myBar01')){
-	document.myX1move = document.myX1move * -1
-	console.log('tar2 * -1')
-	}
-	if(myHitOther('tar2', 'myBar02')){
-	document.myX1move = document.myX1move * -1
-	console.log('tar2 * -1')
-	}
-	if(myHitOther('tar2', 'myBar03')){
-	document.myX1move = document.myX1move * -1
-	console.log('tar2 * -1')
-	}
-	if (parseInt(document.getElementById('tar3').style.left) < 0) {
-	document.myX2move = document.myX2move * -1
-	console.log('tar3 * -1')
-	}
-	if (parseInt(document.getElementById('tar3').style.left) + 50 > window.innerWidth) {
-	document.myX2move = document.myX2move * -1
-	console.log('tar3 * -1')
-	}
-	if(myHitOther('tar3', 'myBar01')){
-	document.myX2move = document.myX2move * -1
-	console.log('tar3 * -1')
-	}
-	if(myHitOther('tar3', 'myBar02')){
-	document.myX2move = document.myX2move * -1
-	console.log('tar3 * -1')
-	}
-	if(myHitOther('tar3', 'myBar03')){
-	document.myX2move = document.myX2move * -1
-	console.log('tar3 * -1')
+	if (parseInt(document.getElementById('tar5').style.top) < 0
+	|| parseInt(document.getElementById('tar5').style.top) + 60 > window.innerHeight
+	|| myHitOther('tar5', 'myBar01')
+	|| myHitOther('tar5', 'myBar02')
+	|| myHitOther('tar5', 'myBar03')) {
+	document.myYmove = document.myYmove * -1
 	}
 }
 
@@ -197,14 +170,9 @@ function myScoreAdd(){
 }
 
 
-function myX1Auto(my1){
-	document.getElementById(my1).style.left = parseInt(document.getElementById(my1).style.left) + document.myX1move
-	myCheckAll()
-}
-
-
-function myX2Auto(my1){
-	document.getElementById(my1).style.left = parseInt(document.getElementById(my1).style.left) + document.myX2move
+function myAuto(my1,my2){
+	document.getElementById(my1).style.left = parseInt(document.getElementById(my1).style.left) + document.myXmove
+	document.getElementById(my2).style.top = parseInt(document.getElementById(my2).style.top) + document.myYmove
 	myCheckAll()
 }
 </script>
@@ -212,10 +180,8 @@ function myX2Auto(my1){
 
 <body
 onLoad="{
-	clearInterval(document.myX1timer)
-	clearInterval(document.myX2timer)                  
-	document.myX1timer = setInterval( myX1Auto, document.myX1speed, 'tar2')                
-	document.myX2timer = setInterval( myX2Auto, document.myX2speed, 'tar3')
+	clearInterval(document.myTimer)                    
+	document.mytimer = setInterval( myAuto, document.mySpeed, 'tar4','tar5')
 
 	document.getElementById('myBar03').style.width = parseInt(window.innerWidth-1100)
 	document.getElementById('myScore1').style.left = parseInt(window.innerWidth-230)
@@ -270,20 +236,9 @@ onKeyDown="{
 }">
 
 
-<h1 align=center>T4A??-Final Project Level02-Charles</h1>
+<h1 align=center>T4A01-Final Project Level01-Charles</h1>
 Version 0.0.0<br>
 
-<input type=button value="clearIntervals" onClick="{
-	clearInterval(document.myX1timer)
-	clearInterval(document.myX2timer)
-}"><br>
-<input type=button value="Auto on" onClick="{
-	clearInterval(document.myX1timer)                    
-	document.myX1timer = setInterval( myX1Auto, document.myX1speed, 'tar2');
-
-	clearInterval(document.myX2timer)                    
-	document.myX2timer = setInterval( myX2Auto, document.myX2speed, 'tar3');
-}"><br>
 
 <input id="myScoreA" type=text value=0 style="position: absolute; left: -1000; top: 0; width: 100; height: 50">
 <h2>

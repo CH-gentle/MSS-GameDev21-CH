@@ -1,12 +1,10 @@
 <script>
-document.myXmove = 8
+document.myXmove = 10
 document.myYmove = 5
 
-document.myXspeed = 50
-document.myYspeed = 50 
+document.mySpeed = 50
 
-document.myXtimer = 0;
-document.myYtimer = 0;
+document.myTimer = 0;
 
 function myHitOther(my1,my2){
    left1   = parseInt(document.getElementById(my1).style.left)
@@ -118,11 +116,11 @@ function myCheckAll(){
 	myScoreAdd()
 	}
 	if(myHitOther('my1','tar4')){
-	mySpawn('tar4')
+	mySpawn('my1')
 	myScoreAdd()
 	}
 	if(myHitOther('my1','tar5')){
-	mySpawn('tar5')
+	mySpawn('my1')
 	myScoreAdd()
 	}
 	if(myHitOther('my1','tar6')){
@@ -143,28 +141,25 @@ function myCheckAll(){
 	alert('You Won!')
 	location = 'https://ch-gentle.github.io/MSS-GameDev21-CH/public/T4A01-Final%20Project%20Level01-Charles.html'
 	}
-	if(parseInt(document.getElementById('bpot01').style.left) >= 0){
+	if(parseInt(document.getElementById('bpot01').style.left) >= 0
+	|| parseInt(document.getElementById('bpot02').style.left) >= 0){
 	alert('Mr. Ellis: How dare you broke my flower pot!')
 	location = 'https://ch-gentle.github.io/MSS-GameDev21-CH/public/T4A01-Final%20Project%20Level01-Charles.html'
 	}
-	if(parseInt(document.getElementById('bpot02').style.left) >= 0){
-	alert('Mr. Ellis: How dare you broke my flower pot!')
-	location = 'https://ch-gentle.github.io/MSS-GameDev21-CH/public/T4A01-Final%20Project%20Level01-Charles.html'
-	}
-	if (parseInt(document.getElementById('tar2').style.left) < 0) {
+
+	if (parseInt(document.getElementById('tar4').style.left) < 0
+	|| parseInt(document.getElementById('tar4').style.left) + 50 > window.innerWidth
+	|| myHitOther('tar4', 'myBar01')
+	|| myHitOther('tar4', 'myBar02')
+	|| myHitOther('tar4', 'myBar03')) {
 	document.myXmove = document.myXmove * -1
 	}
-	if (parseInt(document.getElementById('tar2').style.left) + 50 > window.innerWidth) {
-	document.myXmove = document.myXmove * -1
-	}
-	if(myHitOther('tar2', 'myBar01')){
-	document.myXmove = document.myXmove * -1
-	}
-	if(myHitOther('tar2', 'myBar02')){
-	document.myXmove = document.myXmove * -1
-	}
-	if(myHitOther('tar2', 'myBar03')){
-	document.myXmove = document.myXmove * -1
+	if (parseInt(document.getElementById('tar5').style.top) < 0
+	|| parseInt(document.getElementById('tar5').style.top) + 60 > window.innerHeight
+	|| myHitOther('tar5', 'myBar01')
+	|| myHitOther('tar5', 'myBar02')
+	|| myHitOther('tar5', 'myBar03')) {
+	document.myYmove = document.myYmove * -1
 	}
 }
 
@@ -175,14 +170,9 @@ function myScoreAdd(){
 }
 
 
-function myXAuto(my1){
+function myAuto(my1,my2){
 	document.getElementById(my1).style.left = parseInt(document.getElementById(my1).style.left) + document.myXmove
-	myCheckAll()
-}
-
-
-function myYAuto(my1){
-	document.getElementById(my1).style.top = parseInt(document.getElementById(my1).style.top) + document.myYmove
+	document.getElementById(my2).style.top = parseInt(document.getElementById(my2).style.top) + document.myYmove
 	myCheckAll()
 }
 </script>
@@ -190,8 +180,8 @@ function myYAuto(my1){
 
 <body
 onLoad="{
-	clearInterval(document.myXtimer)                    
-	document.myXtimer = setInterval( myXAuto, document.myXspeed, 'tar2');
+	clearInterval(document.myTimer)                    
+	document.mytimer = setInterval( myAuto, document.mySpeed, 'tar4','tar5')
 
 	document.getElementById('myBar03').style.width = parseInt(window.innerWidth-1100)
 	document.getElementById('myScore1').style.left = parseInt(window.innerWidth-230)
@@ -260,32 +250,32 @@ Score:</span>
 /10</span>
 </h2>
 
-<img src="https://timesofindia.indiatimes.com/photo/67586673.cms" 
+<img title="m1" src="https://timesofindia.indiatimes.com/photo/67586673.cms" 
 id="my1" style="position: absolute; left: 100; top: 200; width: 50; height: 50">
 
-<img src="https://images.theconversation.com/files/265294/original/file-20190322-36283-1me4pb6.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"
+<img title="t2" src="https://images.theconversation.com/files/265294/original/file-20190322-36283-1me4pb6.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"
  id="tar2" style="position: absolute; left: 300; top: 200; width: 50; height: 50">
 
-<img src="https://images.theconversation.com/files/265294/original/file-20190322-36283-1me4pb6.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"
+<img title="t3" src="https://images.theconversation.com/files/265294/original/file-20190322-36283-1me4pb6.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"
  id="tar3" style="position: absolute; left: 500; top: 450; width: 50; height: 50">
 
-<img src="https://images.theconversation.com/files/265294/original/file-20190322-36283-1me4pb6.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"
+<img title="t4" src="https://images.theconversation.com/files/265294/original/file-20190322-36283-1me4pb6.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"
  id="tar4" style="position: absolute; left: 1000; top: 550; width: 50; height: 50">
 
-<img src="https://i.dell.com/is/image/DellContent//content/dam/global-site-design/product_images/peripherals/input_devices/dell/mouse/ms3320w/global_spi/ng/dell-wireless-mouse-ms3320w-details-hero-500-ng.psd?fmt=jpg"
+<img title="t5" src="https://i.dell.com/is/image/DellContent//content/dam/global-site-design/product_images/peripherals/input_devices/dell/mouse/ms3320w/global_spi/ng/dell-wireless-mouse-ms3320w-details-hero-500-ng.psd?fmt=jpg"
  id="tar5" style="position: absolute; left: 1200; top: 300; width: 50; height: 50">
 
-<img src="https://i.dell.com/is/image/DellContent//content/dam/global-site-design/product_images/peripherals/input_devices/dell/mouse/ms3320w/global_spi/ng/dell-wireless-mouse-ms3320w-details-hero-500-ng.psd?fmt=jpg"
+<img title="t6" src="https://i.dell.com/is/image/DellContent//content/dam/global-site-design/product_images/peripherals/input_devices/dell/mouse/ms3320w/global_spi/ng/dell-wireless-mouse-ms3320w-details-hero-500-ng.psd?fmt=jpg"
  id="tar6" style="position: absolute; left: 300; top: 600; width: 50; height: 50">
 
 <span id="myBar01" style="position:absolute; left:300; top:300; width: 500; height: 100; background-color: orange;">
-Wall</span>
+Wall(myBar01)</span>
 
 <span id="myBar02" style="position:absolute; left:800; top:300; width: 100; height: 300; background-color: orange;">
-Wall</span>
+Wall(myBar02)</span>
 
 <span id="myBar03" style="position:absolute; left:1100; top:500; width: 200; height: 100; background-color: orange;">
-Wall</span>
+Wall(myBar03)</span>
 
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMowtZE7heI54A6tRsngbgovlC2wXQpnIuQg&usqp=CAU"
  id="pot01" style="position: absolute; left: 500; top: 600; width: 75; height: 75">
