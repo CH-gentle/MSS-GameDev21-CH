@@ -116,11 +116,11 @@ function myCheckAll(){
 	myScoreAdd()
 	}
 	if(myHitOther('my1','tar4')){
-	mySpawn('my1')
+	mySpawn('tar4')
 	myScoreAdd()
 	}
 	if(myHitOther('my1','tar5')){
-	mySpawn('my1')
+	mySpawn('tar5')
 	myScoreAdd()
 	}
 	if(myHitOther('my1','tar6')){
@@ -225,7 +225,7 @@ onKeyDown="{
 
 	let myDown = event.key
 	if (myRight == 's' 
-	&& parseInt(document.getElementById('my1').style.top)<=window.innerHeight-150
+	&& parseInt(document.getElementById('my1').style.top)<=window.innerHeight-100
 	&& myBarrierDown('my1','myBar01')
 	&& myBarrierDown('my1','myBar02')
 	&& myBarrierDown('my1','myBar03')) {
@@ -237,7 +237,7 @@ onKeyDown="{
 
 
 <h1 align=center>T4A01-Final Project Level01-Charles</h1>
-Version 0.0.0<br>
+Version 3.8.1<br>
 
 
 <input id="myScoreA" type=text value=0 style="position: absolute; left: -1000; top: 0; width: 100; height: 50">

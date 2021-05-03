@@ -183,7 +183,6 @@ onLoad="{
 	clearInterval(document.myTimer)                    
 	document.mytimer = setInterval( myAuto, document.mySpeed, 'tar4','tar5')
 
-	document.getElementById('myBar03').style.width = parseInt(window.innerWidth-1100)
 	document.getElementById('myScore1').style.left = parseInt(window.innerWidth-230)
 	document.getElementById('myScore').style.left = parseInt(window.innerWidth-150)
 	document.getElementById('myScore2').style.left = parseInt(window.innerWidth-130)
@@ -195,7 +194,12 @@ onKeyDown="{
 	&& parseInt(document.getElementById('my1').style.left)>=50
 	&& myBarrierLeft('my1','myBar01')
 	&& myBarrierLeft('my1','myBar02')
-	&& myBarrierLeft('my1','myBar03')) {
+	&& myBarrierLeft('my1','myBar03')
+	&& myBarrierLeft('my1','myBar04')
+	&& myBarrierLeft('my1','myBar05')
+	&& myBarrierLeft('my1','myBar06')
+	&& myBarrierLeft('my1','myBar07')
+	&& myBarrierLeft('my1','myBar08')) {
 	document.getElementById('my1').style.left =
 	parseInt(document.getElementById('my1').style.left) -50
 	myCheckAll()
@@ -206,7 +210,12 @@ onKeyDown="{
 	&& parseInt(document.getElementById('my1').style.top)>=50
 	&& myBarrierUp('my1','myBar01')
 	&& myBarrierUp('my1','myBar02')
-	&& myBarrierUp('my1','myBar03')) {
+	&& myBarrierUp('my1','myBar03')
+	&& myBarrierUp('my1','myBar04')
+	&& myBarrierUp('my1','myBar05')
+	&& myBarrierUp('my1','myBar06')
+	&& myBarrierUp('my1','myBar07')
+	&& myBarrierUp('my1','myBar08')) {
 	document.getElementById('my1').style.top =
 	parseInt(document.getElementById('my1').style.top) -50
 	myCheckAll()
@@ -217,7 +226,12 @@ onKeyDown="{
 	&& parseInt(document.getElementById('my1').style.left)<=window.innerWidth-100
 	&& myBarrierRight('my1','myBar01')
 	&& myBarrierRight('my1','myBar02')
-	&& myBarrierRight('my1','myBar03')) {
+	&& myBarrierRight('my1','myBar03')
+	&& myBarrierRight('my1','myBar04')
+	&& myBarrierRight('my1','myBar05')
+	&& myBarrierRight('my1','myBar06')
+	&& myBarrierRight('my1','myBar07')
+	&& myBarrierRight('my1','myBar08')) {
 	document.getElementById('my1').style.left =
 	parseInt(document.getElementById('my1').style.left) +50
 	myCheckAll()
@@ -225,10 +239,15 @@ onKeyDown="{
 
 	let myDown = event.key
 	if (myRight == 's' 
-	&& parseInt(document.getElementById('my1').style.top)<=window.innerHeight-150
+	&& parseInt(document.getElementById('my1').style.top)<=window.innerHeight-100
 	&& myBarrierDown('my1','myBar01')
 	&& myBarrierDown('my1','myBar02')
-	&& myBarrierDown('my1','myBar03')) {
+	&& myBarrierDown('my1','myBar03')
+	&& myBarrierDown('my1','myBar04')
+	&& myBarrierDown('my1','myBar05')
+	&& myBarrierDown('my1','myBar06')
+	&& myBarrierDown('my1','myBar07')
+	&& myBarrierDown('my1','myBar08')) {
 	document.getElementById('my1').style.top =
 	parseInt(document.getElementById('my1').style.top) +50
 	myCheckAll()
@@ -236,8 +255,9 @@ onKeyDown="{
 }">
 
 
-<h1 align=center>T4A01-Final Project Level01-Charles</h1>
-Version 0.0.0<br>
+<h1 align=center>T4A01-Final Project Level02-Charles</h1>
+<h3 align=center>Level 01</h3>
+<span style="position: absolute; left: 0; top: 0; width: 100; height: 50">Version 0.0.0</span>
 
 
 <input id="myScoreA" type=text value=0 style="position: absolute; left: -1000; top: 0; width: 100; height: 50">
@@ -250,32 +270,47 @@ Score:</span>
 /10</span>
 </h2>
 
-<img title="m1" src="https://timesofindia.indiatimes.com/photo/67586673.cms" 
-id="my1" style="position: absolute; left: 100; top: 200; width: 50; height: 50">
+<img title="my1" src="https://timesofindia.indiatimes.com/photo/67586673.cms" 
+id="my1" style="position: absolute; left: 200; top: 200; width: 50; height: 50">
 
-<img title="t2" src="https://images.theconversation.com/files/265294/original/file-20190322-36283-1me4pb6.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"
+<img title="tar2" src="https://images.theconversation.com/files/265294/original/file-20190322-36283-1me4pb6.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"
  id="tar2" style="position: absolute; left: 300; top: 200; width: 50; height: 50">
 
-<img title="t3" src="https://images.theconversation.com/files/265294/original/file-20190322-36283-1me4pb6.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"
+<img title="tar3" src="https://images.theconversation.com/files/265294/original/file-20190322-36283-1me4pb6.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"
  id="tar3" style="position: absolute; left: 500; top: 450; width: 50; height: 50">
 
-<img title="t4" src="https://images.theconversation.com/files/265294/original/file-20190322-36283-1me4pb6.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"
+<img title="tar4" src="https://images.theconversation.com/files/265294/original/file-20190322-36283-1me4pb6.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"
  id="tar4" style="position: absolute; left: 1000; top: 550; width: 50; height: 50">
 
-<img title="t5" src="https://i.dell.com/is/image/DellContent//content/dam/global-site-design/product_images/peripherals/input_devices/dell/mouse/ms3320w/global_spi/ng/dell-wireless-mouse-ms3320w-details-hero-500-ng.psd?fmt=jpg"
+<img title="tar5" src="https://i.dell.com/is/image/DellContent//content/dam/global-site-design/product_images/peripherals/input_devices/dell/mouse/ms3320w/global_spi/ng/dell-wireless-mouse-ms3320w-details-hero-500-ng.psd?fmt=jpg"
  id="tar5" style="position: absolute; left: 1200; top: 300; width: 50; height: 50">
 
-<img title="t6" src="https://i.dell.com/is/image/DellContent//content/dam/global-site-design/product_images/peripherals/input_devices/dell/mouse/ms3320w/global_spi/ng/dell-wireless-mouse-ms3320w-details-hero-500-ng.psd?fmt=jpg"
+<img title="tar6" src="https://i.dell.com/is/image/DellContent//content/dam/global-site-design/product_images/peripherals/input_devices/dell/mouse/ms3320w/global_spi/ng/dell-wireless-mouse-ms3320w-details-hero-500-ng.psd?fmt=jpg"
  id="tar6" style="position: absolute; left: 300; top: 600; width: 50; height: 50">
 
-<span id="myBar01" style="position:absolute; left:300; top:300; width: 500; height: 100; background-color: orange;">
+<span id="myBar01" style="position:absolute; left:100; top:100; width: 100; height: 200; background-color: orange;">
 Wall(myBar01)</span>
 
-<span id="myBar02" style="position:absolute; left:800; top:300; width: 100; height: 300; background-color: orange;">
+<span id="myBar02" style="position:absolute; left:300; top:250; width: 700; height: 50; background-color: orange;">
 Wall(myBar02)</span>
 
-<span id="myBar03" style="position:absolute; left:1100; top:500; width: 200; height: 100; background-color: orange;">
+<span id="myBar03" style="position:absolute; left:1250; top:0; width: 50; height: 500; background-color: orange;">
 Wall(myBar03)</span>
+
+<span id="myBar04" style="position:absolute; left:300; top:400; width: 750; height: 50; background-color: orange;">
+Wall(myBar04)</span>
+
+<span id="myBar05" style="position:absolute; left:1050; top:350; width: 50; height: 100; background-color: orange;">
+Wall(myBar05)</span>
+
+<span id="myBar06" style="position:absolute; left:100; top:600; width: 300; height: 50; background-color: orange;">
+Wall(myBar06)</span>
+
+<span id="myBar07" style="position:absolute; left:400; top:550; width: 50; height: 100; background-color: orange;">
+Wall(myBar07)</span>
+
+<span id="myBar08" style="position:absolute; left:900; top:450; width: 50; height: 250; background-color: orange;">
+Wall(myBar08)</span>
 
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMowtZE7heI54A6tRsngbgovlC2wXQpnIuQg&usqp=CAU"
  id="pot01" style="position: absolute; left: 500; top: 600; width: 75; height: 75">
