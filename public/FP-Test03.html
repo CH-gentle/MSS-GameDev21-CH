@@ -95,8 +95,8 @@ function myBarrierDown(my1,my2){
 
 
 function mySpawn(tar){
-	document.getElementById(tar).style.left = Math.floor(Math.random()*(window.innerWidth-50))
-	document.getElementById(tar).style.top = Math.floor(Math.random()*(window.innerHeight-50))
+	document.getElementById(tar).style.left = Math.floor(Math.random()*(window.innerWidth-50)/50)*50
+	document.getElementById(tar).style.top = Math.floor(Math.random()*(window.innerHeight-50)/50)*50
 	if(myHitOther(tar,'my1')){mySpawn(tar)}
 	if(myHitOther(tar,'myBar01')){mySpawn(tar)}
 	if(myHitOther(tar,'myBar02')){mySpawn(tar)}
