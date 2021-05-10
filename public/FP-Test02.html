@@ -105,49 +105,49 @@ function myBarrierDown(my1,my2){
 */
 
 function myCheckAll(){
-	if(myHitOther('my1','tar2')){
+	if(myHitOther('my1','kill01')){
 	myBadEnd()
 	}
-	if(myHitOther('my1','tar3')){
+	if(myHitOther('my1','kill02')){
 	myBadEnd()
 	}
-	if(myHitOther('my1','tar4')){
+	if(myHitOther('my1','car01')){
 	myBadEnd()
 	}
-	if(myHitOther('my1','tar5')){
+	if(myHitOther('my1','car02')){
 	myBadEnd()
 	}
-	if(myHitOther('my1','tar6')){
+	if(myHitOther('my1','snipe01')){
 	myBadEnd()
 	}
 	if(myHitOther('my1','ray01')){
 	myBadEnd()
 	}
-	if(myHitOther('my1','gate01')){
+	if(myHitOther('my1','safe01')){
 	myNextlevel()
 	}
-	if (parseInt(document.getElementById('tar4').style.left) < 10
-	|| parseInt(document.getElementById('tar4').style.left) + 120 > window.innerWidth
-	|| myHitOther('tar4', 'myBar01')
-	|| myHitOther('tar4', 'myBar02')
-	|| myHitOther('tar4', 'myBar03')
-	|| myHitOther('tar4', 'myBar04')
-	|| myHitOther('tar4', 'myBar05')
-	|| myHitOther('tar4', 'myBar06')
-	|| myHitOther('tar4', 'myBar07')
-	|| myHitOther('tar4', 'myBar08')) {
+	if (parseInt(document.getElementById('car01').style.left) < 10
+	|| parseInt(document.getElementById('car01').style.left) + 120 > window.innerWidth
+	|| myHitOther('car01', 'myBar01')
+	|| myHitOther('car01', 'myBar02')
+	|| myHitOther('car01', 'myBar03')
+	|| myHitOther('car01', 'myBar04')
+	|| myHitOther('car01', 'myBar05')
+	|| myHitOther('car01', 'myBar06')
+	|| myHitOther('car01', 'myBar07')
+	|| myHitOther('car01', 'myBar08')) {
 	document.myXmove = document.myXmove * -1
 	}
-	if (parseInt(document.getElementById('tar5').style.top) < 20
-	|| parseInt(document.getElementById('tar5').style.top) + 70 > window.innerHeight
-	|| myHitOther('tar5', 'myBar01')
-	|| myHitOther('tar5', 'myBar02')
-	|| myHitOther('tar5', 'myBar03')
-	|| myHitOther('tar5', 'myBar04')
-	|| myHitOther('tar5', 'myBar05')
-	|| myHitOther('tar5', 'myBar06')
-	|| myHitOther('tar5', 'myBar07')
-	|| myHitOther('tar5', 'myBar08')) {
+	if (parseInt(document.getElementById('car02').style.top) < 20
+	|| parseInt(document.getElementById('car02').style.top) + 70 > window.innerHeight
+	|| myHitOther('car02', 'myBar01')
+	|| myHitOther('car02', 'myBar02')
+	|| myHitOther('car02', 'myBar03')
+	|| myHitOther('car02', 'myBar04')
+	|| myHitOther('car02', 'myBar05')
+	|| myHitOther('car02', 'myBar06')
+	|| myHitOther('car02', 'myBar07')
+	|| myHitOther('car02', 'myBar08')) {
 	document.myYmove = document.myYmove * -1
 	}
 }
@@ -173,10 +173,10 @@ function myAuto(my1,my2){
 <body
 onLoad="{
 	clearInterval(document.myTimer)                    
-	document.mytimer = setInterval( myAuto, document.mySpeed, 'tar4','tar5')
+	document.mytimer = setInterval( myAuto, document.mySpeed, 'car01','car02')
 
-	document.getElementById('gate01').style.left = window.innerWidth - 100
-	document.getElementById('gate01').style.top = window.innerHeight - 50
+	document.getElementById('safe01').style.left = window.innerWidth - 100
+	document.getElementById('safe01').style.top = window.innerHeight - 50
 	document.getElementById('ray01').style.width = window.innerWidth - 1150
 }"
 
@@ -215,7 +215,7 @@ onKeyDown="{
 
 	let myRight = event.key
 	if (myRight == 'd'
-	&& parseInt(document.getElementById('my1').style.left)<=window.innerWidth-50
+	&& parseInt(document.getElementById('my1').style.left)<=window.innerWidth-100
 	&& myBarrierRight('my1','myBar01')
 	&& myBarrierRight('my1','myBar02')
 	&& myBarrierRight('my1','myBar03')
@@ -255,20 +255,20 @@ onKeyDown="{
 <img title="my1" src="Orga01.jpg" 
 id="my1" style="position: absolute; left: 200; top: 200; width: 50; height: 50">
 
-<img title="tar2" src="killer01.png"
- id="tar2" style="position: absolute; left: 300; top: 200; width: 50; height: 50">
+<img title="kill01" src="killer01.png"
+ id="kill01" style="position: absolute; left: 300; top: 200; width: 50; height: 50">
 
-<img title="tar3" src="killer01.png"
- id="tar3" style="position: absolute; left: 500; top: 450; width: 50; height: 50">
+<img title="kill02" src="killer01.png"
+ id="kill02" style="position: absolute; left: 500; top: 450; width: 50; height: 50">
 
-<img title="tar4" src="car01.png"
- id="tar4" style="position: absolute; left: 1000; top: 550; width: 100; height: 50">
+<img title="car01" src="car01.png"
+ id="car01" style="position: absolute; left: 1000; top: 550; width: 100; height: 50">
 
-<img title="tar5" src="car01.png"
- id="tar5" style="position: absolute; left: 1150; top: 300; width: 100; height: 50">
+<img title="car02" src="car01.png"
+ id="car02" style="position: absolute; left: 1150; top: 300; width: 100; height: 50">
 
-<img title="tar6" src="sniper01.png"
- id="tar6" style="position: absolute; left: 1000; top: 700; width: 50; height: 50">
+<img title="snipe01" src="sniper01.png"
+ id="snipe01" style="position: absolute; left: 1000; top: 700; width: 50; height: 50">
 
 <span id="myBar01" style="position:absolute; left:100; top:100; width: 100; height: 200; background-color: orange;">
 Wall(myBar01)</span>
@@ -295,7 +295,7 @@ Wall(myBar07)</span>
 Wall(myBar08)</span>
 
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe_ptU4QLx5Jwz6i4WSVehnsfC4Tthfrbhbg&usqp=CAU" 
-id="gate01" style="position: absolute; left: 1000; top: 1000; width: 100; height: 50">
+id="safe01" style="position: absolute; left: 1000; top: 1000; width: 100; height: 50">
 
 <span id="ray01" style="position: absolute; left: 1050; top: 721; width: 100; height: 1; background-color: red;">
 </span>
