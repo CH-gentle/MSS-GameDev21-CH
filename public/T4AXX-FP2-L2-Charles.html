@@ -120,11 +120,14 @@ function myCheckAll(){
 	if(myHitOther('my1','tar6')){
 	myBadEnd()
 	}
+	if(myHitOther('my1','ray01')){
+	myBadEnd()
+	}
 	if(myHitOther('my1','gate01')){
 	myNextlevel()
 	}
 	if (parseInt(document.getElementById('tar4').style.left) < 10
-	|| parseInt(document.getElementById('tar4').style.left) + 60 > window.innerWidth
+	|| parseInt(document.getElementById('tar4').style.left) + 120 > window.innerWidth
 	|| myHitOther('tar4', 'myBar01')
 	|| myHitOther('tar4', 'myBar02')
 	|| myHitOther('tar4', 'myBar03')
@@ -135,28 +138,28 @@ function myCheckAll(){
 	|| myHitOther('tar4', 'myBar08')) {
 	document.myXmove = document.myXmove * -1
 	}
-	if (parseInt(document.getElementById('tar5').style.top) < 10
-	|| parseInt(document.getElementById('tar5').style.top) + 60 > window.innerHeight
-	|| myHitOther('tar4', 'myBar01')
-	|| myHitOther('tar4', 'myBar02')
-	|| myHitOther('tar4', 'myBar03')
-	|| myHitOther('tar4', 'myBar04')
-	|| myHitOther('tar4', 'myBar05')
-	|| myHitOther('tar4', 'myBar06')
-	|| myHitOther('tar4', 'myBar07')
-	|| myHitOther('tar4', 'myBar08')) {
+	if (parseInt(document.getElementById('tar5').style.top) < 20
+	|| parseInt(document.getElementById('tar5').style.top) + 70 > window.innerHeight
+	|| myHitOther('tar5', 'myBar01')
+	|| myHitOther('tar5', 'myBar02')
+	|| myHitOther('tar5', 'myBar03')
+	|| myHitOther('tar5', 'myBar04')
+	|| myHitOther('tar5', 'myBar05')
+	|| myHitOther('tar5', 'myBar06')
+	|| myHitOther('tar5', 'myBar07')
+	|| myHitOther('tar5', 'myBar08')) {
 	document.myYmove = document.myYmove * -1
 	}
 }
 
 function myBadEnd(){
 	alert('You failed')
-	location = 'https://ch-gentle.github.io/MSS-GameDev21-CH/public/T4AXX-FP2-L1-Charles.html'
+	//location = 'https://ch-gentle.github.io/MSS-GameDev21-CH/public/T4AXX-FP2-L1-Charles.html'
 	}
 
 function myNextlevel(){
 	alert('You won')
-	location = 'https://ch-gentle.github.io/MSS-GameDev21-CH/public/T4AXX-FP2-L2-Charles.html'
+	//location = 'https://ch-gentle.github.io/MSS-GameDev21-CH/public/T4AXX-FP2-L2-Charles.html'
 	}
 
 function myAuto(my1,my2){
@@ -172,8 +175,9 @@ onLoad="{
 	clearInterval(document.myTimer)                    
 	document.mytimer = setInterval( myAuto, document.mySpeed, 'tar4','tar5')
 
-	document.getElementById('gate01').style.left = window.innerWidth - 50
+	document.getElementById('gate01').style.left = window.innerWidth - 100
 	document.getElementById('gate01').style.top = window.innerHeight - 50
+	document.getElementById('ray01').style.width = window.innerWidth - 1150
 }"
 
 onKeyDown="{
@@ -211,7 +215,7 @@ onKeyDown="{
 
 	let myRight = event.key
 	if (myRight == 'd'
-	&& parseInt(document.getElementById('my1').style.left)<=window.innerWidth-100
+	&& parseInt(document.getElementById('my1').style.left)<=window.innerWidth-50
 	&& myBarrierRight('my1','myBar01')
 	&& myBarrierRight('my1','myBar02')
 	&& myBarrierRight('my1','myBar03')
@@ -248,22 +252,22 @@ onKeyDown="{
 
 <span style="position: absolute; left: 0; top: 0; width: 100; height: 50">Version 0.0.0</span>
 
-<img title="my1" src="https://timesofindia.indiatimes.com/photo/67586673.cms" 
+<img title="my1" src="Orga01.jpg" 
 id="my1" style="position: absolute; left: 200; top: 200; width: 50; height: 50">
 
-<img title="tar2" src="https://images.theconversation.com/files/265294/original/file-20190322-36283-1me4pb6.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"
+<img title="tar2" src="killer01.png"
  id="tar2" style="position: absolute; left: 300; top: 200; width: 50; height: 50">
 
-<img title="tar3" src="https://images.theconversation.com/files/265294/original/file-20190322-36283-1me4pb6.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"
+<img title="tar3" src="killer01.png"
  id="tar3" style="position: absolute; left: 500; top: 450; width: 50; height: 50">
 
-<img title="tar4" src="https://images.theconversation.com/files/265294/original/file-20190322-36283-1me4pb6.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"
- id="tar4" style="position: absolute; left: 1000; top: 550; width: 50; height: 50">
+<img title="tar4" src="car01.png"
+ id="tar4" style="position: absolute; left: 1000; top: 550; width: 100; height: 50">
 
-<img title="tar5" src="https://i.dell.com/is/image/DellContent//content/dam/global-site-design/product_images/peripherals/input_devices/dell/mouse/ms3320w/global_spi/ng/dell-wireless-mouse-ms3320w-details-hero-500-ng.psd?fmt=jpg"
- id="tar5" style="position: absolute; left: 1200; top: 300; width: 50; height: 50">
+<img title="tar5" src="car01.png"
+ id="tar5" style="position: absolute; left: 1150; top: 300; width: 100; height: 50">
 
-<img title="tar6" src="https://i.dell.com/is/image/DellContent//content/dam/global-site-design/product_images/peripherals/input_devices/dell/mouse/ms3320w/global_spi/ng/dell-wireless-mouse-ms3320w-details-hero-500-ng.psd?fmt=jpg"
+<img title="tar6" src="sniper01.png"
  id="tar6" style="position: absolute; left: 1000; top: 700; width: 50; height: 50">
 
 <span id="myBar01" style="position:absolute; left:100; top:100; width: 100; height: 200; background-color: orange;">
@@ -291,6 +295,9 @@ Wall(myBar07)</span>
 Wall(myBar08)</span>
 
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe_ptU4QLx5Jwz6i4WSVehnsfC4Tthfrbhbg&usqp=CAU" 
-id="gate01" style="position: absolute; left: 1000; top: 1000; width: 50; height: 50">
+id="gate01" style="position: absolute; left: 1000; top: 1000; width: 100; height: 50">
+
+<span id="ray01" style="position: absolute; left: 1050; top: 721; width: 100; height: 1; background-color: red;">
+</span>
 
 </body>
