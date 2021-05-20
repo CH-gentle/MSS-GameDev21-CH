@@ -332,12 +332,14 @@ function myCheckAll(){
 
 function myBadEnd(){
 	alert('You failed')
-	//location = 'https://ch-gentle.github.io/MSS-GameDev21-CH/public/T4AXX-FP2-L2-Charles.html'
+	document.getElementById('my1').style.left = -400
+	location = location
 }
 
 function myNextlevel(){
 	alert('You won')
-	//location = 'https://ch-gentle.github.io/MSS-GameDev21-CH/public/T4AXX-FP2-L2-Charles.html'
+	document.getElementById('my1').style.left = -400
+	//location = '...'
 }
 
 function myAuto(){
@@ -397,45 +399,12 @@ onLoad="{
 	myResize('myBar11')
 	myResize('myBar12')
 	myResize('safe01')
-	//document.getElementById('myBar12').style.width = window.innerWidth - document.getElementById('myBar12').style.left
 }"
-/*
+
 onResize="{
-	myResize('my1')
-	myResize('chase01')
-	myResize('killer01')
-	myResize('killer02')
-	myResize('killer03')
-	myResize('killer04')
-	myResize('killer05')
-	myResize('killer06')
-	myResize('car01')
-	myResize('car02')
-	myResize('car03')
-	myResize('car04')
-	myResize('car05')
-	myResize('car06')
-	myResize('snipe01')
-	myResize('snipe02')
-	myResize('snipe03')
-	myResize('ray01')
-	myResize('ray02')
-	myResize('ray03')
-	myResize('myBar01')
-	myResize('myBar02')
-	myResize('myBar03')
-	myResize('myBar04')
-	myResize('myBar05')
-	myResize('myBar06')
-	myResize('myBar07')
-	myResize('myBar08')
-	myResize('myBar09')
-	myResize('myBar10')
-	myResize('myBar11')
-	myResize('myBar12')
-	myResize('safe01')
+	location = location
 }"
-*/
+
 onKeyDown="{
 	let myLeft = event.key
 	if (myLeft == 'a'

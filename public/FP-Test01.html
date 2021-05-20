@@ -1,6 +1,6 @@
 <script>
-document.unitX = parseInt(window.innerWidth/32)
-document.unitY = parseInt(window.innerHeight/14)
+document.unitX = parseInt(parseInt(window.innerWidth)/32)
+document.unitY = parseInt((parseInt(window.innerHeight)*700/757)/14)
 
 document.myXmove1 = parseInt(document.unitX/5)
 document.myXmove3 = parseInt(document.unitX/5)
@@ -332,12 +332,14 @@ function myCheckAll(){
 
 function myBadEnd(){
 	alert('You failed')
-	//location = 'https://ch-gentle.github.io/MSS-GameDev21-CH/public/T4AXX-FP2-L2-Charles.html'
+	document.getElementById('my1').style.left = -400
+	location = location
 }
 
 function myNextlevel(){
 	alert('You won')
-	//location = 'https://ch-gentle.github.io/MSS-GameDev21-CH/public/T4AXX-FP2-L2-Charles.html'
+	document.getElementById('my1').style.left = -400
+	//location = '...'
 }
 
 function myAuto(){
@@ -351,10 +353,10 @@ function myAuto(){
 }
 
 function myResize(span){
-	document.getElementById(span).style.width = parseInt(document.getElementById(span).style.width)/50*parseInt(document.unitX)
-	document.getElementById(span).style.height = parseInt(document.getElementById(span).style.height)/50*parseInt(document.unitY)
-	document.getElementById(span).style.left = parseInt(document.getElementById(span).style.left)/50*parseInt(document.unitX)
-	document.getElementById(span).style.top = parseInt(document.getElementById(span).style.top)/50*parseInt(document.unitY)
+	document.getElementById(span).style.width = (parseInt(document.getElementById(span).style.width)/50)*parseInt(document.unitX)
+	document.getElementById(span).style.height = (parseInt(document.getElementById(span).style.height)/50)*parseInt(document.unitY)
+	document.getElementById(span).style.left = (parseInt(document.getElementById(span).style.left)/50)*parseInt(document.unitX)
+	document.getElementById(span).style.top = (parseInt(document.getElementById(span).style.top)/50)*parseInt(document.unitY)
 }
 </script>
 
@@ -364,15 +366,14 @@ onLoad="{
 	clearInterval(document.myTimer)                    
 	document.mytimer = setInterval( myAuto, document.mySpeed)
 
-	//document.getElementById('ray01').style.width = window.innerWidth - 1150
 	myResize('my1')
 	myResize('chase01')
-	myResize('killer01')
-	myResize('killer02')
-	myResize('killer03')
-	myResize('killer04')
-	myResize('killer05')
-	myResize('killer06')
+	myResize('kill01')
+	myResize('kill02')
+	myResize('kill03')
+	myResize('kill04')
+	myResize('kill05')
+	myResize('kill06')
 	myResize('car01')
 	myResize('car02')
 	myResize('car03')
@@ -401,39 +402,7 @@ onLoad="{
 }"
 
 onResize="{
-	myResize('my1')
-	myResize('chase01')
-	myResize('killer01')
-	myResize('killer02')
-	myResize('killer03')
-	myResize('killer04')
-	myResize('killer05')
-	myResize('killer06')
-	myResize('car01')
-	myResize('car02')
-	myResize('car03')
-	myResize('car04')
-	myResize('car05')
-	myResize('car06')
-	myResize('snipe01')
-	myResize('snipe02')
-	myResize('snipe03')
-	myResize('ray01')
-	myResize('ray02')
-	myResize('ray03')
-	myResize('myBar01')
-	myResize('myBar02')
-	myResize('myBar03')
-	myResize('myBar04')
-	myResize('myBar05')
-	myResize('myBar06')
-	myResize('myBar07')
-	myResize('myBar08')
-	myResize('myBar09')
-	myResize('myBar10')
-	myResize('myBar11')
-	myResize('myBar12')
-	myResize('safe01')
+	location = location
 }"
 
 onKeyDown="{
@@ -679,8 +648,6 @@ onKeyDown="{
 <h3 align=center>Level 02</h3>
 
 <span style="position: absolute; left: 0; top: 0; width: 100; height: 50">Version 0.0.0</span>
-
-<input type=button value="test" onClick="{alert(document.unitX)}">
 
 <img title="my1" src="Orga01.jpg" 
 id="my1" style="position: absolute; left: 200; top: 200; width: 50; height: 50">
