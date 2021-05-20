@@ -1,11 +1,14 @@
 <script>
-document.myXmove1 = 10
-document.myXmove3 = 10
-document.myXmove4 = 10
-document.myXmove5 = 10
+document.unitX = parseInt(parseInt(window.innerWidth)/32)
+document.unitY = parseInt((parseInt(window.innerHeight)*700/757)/14)
 
-document.myYmove2 = 10
-document.myYmove6 = 10
+document.myXmove1 = parseInt(document.unitX/5)
+document.myXmove3 = parseInt(document.unitX/5)
+document.myXmove4 = parseInt(document.unitX/5)
+document.myXmove5 = parseInt(document.unitX/5)
+
+document.myYmove2 = parseInt(document.unitY/5)
+document.myYmove6 = parseInt(document.unitY/5)
 
 document.mySpeed = 50
 
@@ -229,8 +232,8 @@ function myCheckAll(){
 	if(myHitOther('my1','safe01')){
 	myNextlevel()
 	}
-	if (parseInt(document.getElementById('car01').style.left) < 10
-	|| parseInt(document.getElementById('car01').style.left) + 120 > window.innerWidth
+	if (parseInt(document.getElementById('car01').style.left) < 0.2*parseInt(document.unitX)
+	|| parseInt(document.getElementById('car01').style.left) + 2.2*parseInt(document.unitX) > window.innerWidth
 	|| myHitOther('car01', 'myBar01')
 	|| myHitOther('car01', 'myBar02')
 	|| myHitOther('car01', 'myBar03')
@@ -245,8 +248,8 @@ function myCheckAll(){
 	|| myHitOther('car01', 'myBar12')) {
 	document.myXmove1 = document.myXmove1 * -1
 	}
-	if (parseInt(document.getElementById('car03').style.left) < 10
-	|| parseInt(document.getElementById('car03').style.left) + 120 > window.innerWidth
+	if (parseInt(document.getElementById('car03').style.left) < 0.2*parseInt(document.unitX)
+	|| parseInt(document.getElementById('car03').style.left) + 2.2*parseInt(document.unitX) > window.innerWidth
 	|| myHitOther('car03', 'myBar01')
 	|| myHitOther('car03', 'myBar02')
 	|| myHitOther('car03', 'myBar03')
@@ -261,8 +264,8 @@ function myCheckAll(){
 	|| myHitOther('car03', 'myBar12')) {
 	document.myXmove3 = document.myXmove3 * -1
 	}
-	if (parseInt(document.getElementById('car04').style.left) < 10
-	|| parseInt(document.getElementById('car04').style.left) + 120 > window.innerWidth
+	if (parseInt(document.getElementById('car04').style.left) < 0.2*parseInt(document.unitX)
+	|| parseInt(document.getElementById('car04').style.left) + 2.2*parseInt(document.unitX) > window.innerWidth
 	|| myHitOther('car04', 'myBar01')
 	|| myHitOther('car04', 'myBar02')
 	|| myHitOther('car04', 'myBar03')
@@ -277,8 +280,8 @@ function myCheckAll(){
 	|| myHitOther('car04', 'myBar12')) {
 	document.myXmove4 = document.myXmove4 * -1
 	}
-	if (parseInt(document.getElementById('car05').style.left) < 10
-	|| parseInt(document.getElementById('car05').style.left) + 120 > window.innerWidth
+	if (parseInt(document.getElementById('car05').style.left) < 0.2*parseInt(document.unitX)
+	|| parseInt(document.getElementById('car05').style.left) + 2.2*parseInt(document.unitX) > window.innerWidth
 	|| myHitOther('car05', 'myBar01')
 	|| myHitOther('car05', 'myBar02')
 	|| myHitOther('car05', 'myBar03')
@@ -293,8 +296,8 @@ function myCheckAll(){
 	|| myHitOther('car05', 'myBar12')) {
 	document.myXmove5 = document.myXmove5 * -1
 	}
-	if (parseInt(document.getElementById('car02').style.top) < 20
-	|| parseInt(document.getElementById('car02').style.top) + 120 > window.innerHeight
+	if (parseInt(document.getElementById('car02').style.top) < 0.2*parseInt(document.unitY)
+	|| parseInt(document.getElementById('car02').style.top) + 2.2*parseInt(document.unitY) > window.innerHeight
 	|| myHitOther('car02', 'myBar01')
 	|| myHitOther('car02', 'myBar02')
 	|| myHitOther('car02', 'myBar03')
@@ -309,8 +312,8 @@ function myCheckAll(){
 	|| myHitOther('car02', 'myBar12')) {
 	document.myYmove2 = document.myYmove2 * -1
 	}
-	if (parseInt(document.getElementById('car06').style.top) < 20
-	|| parseInt(document.getElementById('car06').style.top) + 120 > window.innerHeight
+	if (parseInt(document.getElementById('car06').style.top) < 0.2*parseInt(document.unitY)
+	|| parseInt(document.getElementById('car06').style.top) + 2.2*parseInt(document.unitY) > window.innerHeight
 	|| myHitOther('car06', 'myBar01')
 	|| myHitOther('car06', 'myBar02')
 	|| myHitOther('car06', 'myBar03')
@@ -330,12 +333,12 @@ function myCheckAll(){
 function myBadEnd(){
 	alert('You failed')
 	//location = 'https://ch-gentle.github.io/MSS-GameDev21-CH/public/T4AXX-FP2-L2-Charles.html'
-	}
+}
 
 function myNextlevel(){
 	alert('You won')
 	//location = 'https://ch-gentle.github.io/MSS-GameDev21-CH/public/T4AXX-FP2-L2-Charles.html'
-	}
+}
 
 function myAuto(){
 	document.getElementById('car01').style.left = parseInt(document.getElementById('car01').style.left) + document.myXmove1
@@ -346,6 +349,13 @@ function myAuto(){
 	document.getElementById('car06').style.top = parseInt(document.getElementById('car06').style.top) + document.myYmove6
 	myCheckAll()
 }
+
+function myResize(span){
+	document.getElementById(span).style.width = (parseInt(document.getElementById(span).style.width)/50)*parseInt(document.unitX)
+	document.getElementById(span).style.height = (parseInt(document.getElementById(span).style.height)/50)*parseInt(document.unitY)
+	document.getElementById(span).style.left = (parseInt(document.getElementById(span).style.left)/50)*parseInt(document.unitX)
+	document.getElementById(span).style.top = (parseInt(document.getElementById(span).style.top)/50)*parseInt(document.unitY)
+}
 </script>
 
 
@@ -354,13 +364,82 @@ onLoad="{
 	clearInterval(document.myTimer)                    
 	document.mytimer = setInterval( myAuto, document.mySpeed)
 
-	//document.getElementById('ray01').style.width = window.innerWidth - 1150
+	myResize('my1')
+	myResize('chase01')
+	myResize('kill01')
+	myResize('kill02')
+	myResize('kill03')
+	myResize('kill04')
+	myResize('kill05')
+	myResize('kill06')
+	myResize('car01')
+	myResize('car02')
+	myResize('car03')
+	myResize('car04')
+	myResize('car05')
+	myResize('car06')
+	myResize('snipe01')
+	myResize('snipe02')
+	myResize('snipe03')
+	myResize('ray01')
+	myResize('ray02')
+	myResize('ray03')
+	myResize('myBar01')
+	myResize('myBar02')
+	myResize('myBar03')
+	myResize('myBar04')
+	myResize('myBar05')
+	myResize('myBar06')
+	myResize('myBar07')
+	myResize('myBar08')
+	myResize('myBar09')
+	myResize('myBar10')
+	myResize('myBar11')
+	myResize('myBar12')
+	myResize('safe01')
+	//document.getElementById('myBar12').style.width = window.innerWidth - document.getElementById('myBar12').style.left
 }"
-
+/*
+onResize="{
+	myResize('my1')
+	myResize('chase01')
+	myResize('killer01')
+	myResize('killer02')
+	myResize('killer03')
+	myResize('killer04')
+	myResize('killer05')
+	myResize('killer06')
+	myResize('car01')
+	myResize('car02')
+	myResize('car03')
+	myResize('car04')
+	myResize('car05')
+	myResize('car06')
+	myResize('snipe01')
+	myResize('snipe02')
+	myResize('snipe03')
+	myResize('ray01')
+	myResize('ray02')
+	myResize('ray03')
+	myResize('myBar01')
+	myResize('myBar02')
+	myResize('myBar03')
+	myResize('myBar04')
+	myResize('myBar05')
+	myResize('myBar06')
+	myResize('myBar07')
+	myResize('myBar08')
+	myResize('myBar09')
+	myResize('myBar10')
+	myResize('myBar11')
+	myResize('myBar12')
+	myResize('safe01')
+}"
+*/
 onKeyDown="{
 	let myLeft = event.key
 	if (myLeft == 'a'
-	&& parseInt(document.getElementById('my1').style.left)>=50
+	&& parseInt(document.getElementById('my1').style.left)>=parseInt(document.unitX)
 	&& myBarrierLeft('my1','myBar01')
 	&& myBarrierLeft('my1','myBar02')
 	&& myBarrierLeft('my1','myBar03')
@@ -374,13 +453,13 @@ onKeyDown="{
 	&& myBarrierLeft('my1','myBar11')
 	&& myBarrierLeft('my1','myBar12')) {
 	document.getElementById('my1').style.left =
-	parseInt(document.getElementById('my1').style.left) -50
+	parseInt(document.getElementById('my1').style.left) -parseInt(document.unitX)
 	myCheckAll()
 	}
 
 	let myUp = event.key
 	if (myUp == 'w'
-	&& parseInt(document.getElementById('my1').style.top)>=50
+	&& parseInt(document.getElementById('my1').style.top)>=parseInt(document.unitY)
 	&& myBarrierUp('my1','myBar01')
 	&& myBarrierUp('my1','myBar02')
 	&& myBarrierUp('my1','myBar03')
@@ -394,13 +473,13 @@ onKeyDown="{
 	&& myBarrierUp('my1','myBar11')
 	&& myBarrierUp('my1','myBar12')) {
 	document.getElementById('my1').style.top =
-	parseInt(document.getElementById('my1').style.top) -50
+	parseInt(document.getElementById('my1').style.top) -parseInt(document.unitY)
 	myCheckAll()
 	}
 
 	let myRight = event.key
 	if (myRight == 'd'
-	&& parseInt(document.getElementById('my1').style.left)<=window.innerWidth-100
+	&& parseInt(document.getElementById('my1').style.left)<=window.innerWidth-2*parseInt(document.unitX)
 	&& myBarrierRight('my1','myBar01')
 	&& myBarrierRight('my1','myBar02')
 	&& myBarrierRight('my1','myBar03')
@@ -414,13 +493,13 @@ onKeyDown="{
 	&& myBarrierRight('my1','myBar11')
 	&& myBarrierRight('my1','myBar12')) {
 	document.getElementById('my1').style.left =
-	parseInt(document.getElementById('my1').style.left) +50
+	parseInt(document.getElementById('my1').style.left) +parseInt(document.unitX)
 	myCheckAll()
 	}
 
 	let myDown = event.key
 	if (myRight == 's' 
-	&& parseInt(document.getElementById('my1').style.top)<=window.innerHeight-100
+	&& parseInt(document.getElementById('my1').style.top)<=window.innerHeight-2*parseInt(document.unitY)
 	&& myBarrierDown('my1','myBar01')
 	&& myBarrierDown('my1','myBar02')
 	&& myBarrierDown('my1','myBar03')
@@ -434,13 +513,13 @@ onKeyDown="{
 	&& myBarrierDown('my1','myBar11')
 	&& myBarrierDown('my1','myBar12')) {
 	document.getElementById('my1').style.top =
-	parseInt(document.getElementById('my1').style.top) +50
+	parseInt(document.getElementById('my1').style.top) +parseInt(document.unitY)
 	myCheckAll()
 	}
 
 	let chLeft = event.key
 	if (myLeft == 'a'
-	&& parseInt(document.getElementById('chase01').style.left)> 50
+	&& parseInt(document.getElementById('chase01').style.left)> parseInt(document.unitX)
 	&& chBarrierLeft('chase01','myBar01')
 	&& chBarrierLeft('chase01','myBar02')
 	&& chBarrierLeft('chase01','myBar03')
@@ -454,11 +533,11 @@ onKeyDown="{
 	&& chBarrierLeft('chase01','myBar11')
 	&& chBarrierLeft('chase01','myBar12')) {
 	document.getElementById('chase01').style.left =
-	parseInt(document.getElementById('chase01').style.left) -100
+	parseInt(document.getElementById('chase01').style.left) -2*parseInt(document.unitX)
 	myCheckAll()
 	}else{
 	if (myLeft == 'a'
-	&& parseInt(document.getElementById('chase01').style.left)>=50
+	&& parseInt(document.getElementById('chase01').style.left)>=parseInt(document.unitX)
 	&& myBarrierLeft('chase01','myBar01')
 	&& myBarrierLeft('chase01','myBar02')
 	&& myBarrierLeft('chase01','myBar03')
@@ -472,14 +551,14 @@ onKeyDown="{
 	&& myBarrierLeft('chase01','myBar11')
 	&& myBarrierLeft('chase01','myBar12')) {
 	document.getElementById('chase01').style.left =
-	parseInt(document.getElementById('chase01').style.left) -50
+	parseInt(document.getElementById('chase01').style.left) -parseInt(document.unitX)
 	myCheckAll()
 	}
 	}
 
 	let chUp = event.key
 	if (myUp == 'w'
-	&& parseInt(document.getElementById('chase01').style.top)> 50
+	&& parseInt(document.getElementById('chase01').style.top)> parseInt(document.unitY)
 	&& chBarrierUp('chase01','myBar01')
 	&& chBarrierUp('chase01','myBar02')
 	&& chBarrierUp('chase01','myBar03')
@@ -493,11 +572,11 @@ onKeyDown="{
 	&& chBarrierUp('chase01','myBar11')
 	&& chBarrierUp('chase01','myBar12')) {
 	document.getElementById('chase01').style.top =
-	parseInt(document.getElementById('chase01').style.top) -100
+	parseInt(document.getElementById('chase01').style.top) -2*parseInt(document.unitY)
 	myCheckAll()
 	}else{
 	if (myUp == 'w'
-	&& parseInt(document.getElementById('chase01').style.top)>=50
+	&& parseInt(document.getElementById('chase01').style.top)>=parseInt(document.unitY)
 	&& myBarrierUp('chase01','myBar01')
 	&& myBarrierUp('chase01','myBar02')
 	&& myBarrierUp('chase01','myBar03')
@@ -511,14 +590,14 @@ onKeyDown="{
 	&& myBarrierUp('chase01','myBar11')
 	&& myBarrierUp('chase01','myBar12')) {
 	document.getElementById('chase01').style.top =
-	parseInt(document.getElementById('chase01').style.top) -50
+	parseInt(document.getElementById('chase01').style.top) -parseInt(document.unitY)
 	myCheckAll()
 	}
 	}
 
 	let chRight = event.key
 	if (myRight == 'd'
-	&& parseInt(document.getElementById('chase01').style.left)< window.innerWidth-100
+	&& parseInt(document.getElementById('chase01').style.left)<= window.innerWidth-3*parseInt(document.unitX)
 	&& chBarrierRight('chase01','myBar01')
 	&& chBarrierRight('chase01','myBar02')
 	&& chBarrierRight('chase01','myBar03')
@@ -532,11 +611,11 @@ onKeyDown="{
 	&& chBarrierRight('chase01','myBar11')
 	&& chBarrierRight('chase01','myBar12')) {
 	document.getElementById('chase01').style.left =
-	parseInt(document.getElementById('chase01').style.left) +100
+	parseInt(document.getElementById('chase01').style.left) +2*parseInt(document.unitX)
 	myCheckAll()
 	}else{
 	if (myRight == 'd'
-	&& parseInt(document.getElementById('chase01').style.left)<=window.innerWidth-100
+	&& parseInt(document.getElementById('chase01').style.left)<=window.innerWidth-2*parseInt(document.unitX)
 	&& myBarrierRight('chase01','myBar01')
 	&& myBarrierRight('chase01','myBar02')
 	&& myBarrierRight('chase01','myBar03')
@@ -550,14 +629,14 @@ onKeyDown="{
 	&& myBarrierRight('chase01','myBar11')
 	&& myBarrierRight('chase01','myBar12')) {
 	document.getElementById('chase01').style.left =
-	parseInt(document.getElementById('chase01').style.left) +50
+	parseInt(document.getElementById('chase01').style.left) +parseInt(document.unitX)
 	myCheckAll()
 	}
 	}
 
 	let chDown = event.key
 	if (myRight == 's' 
-	&& parseInt(document.getElementById('chase01').style.top)< window.innerHeight-150
+	&& parseInt(document.getElementById('chase01').style.top)<= window.innerHeight-3*parseInt(document.unitY)
 	&& chBarrierDown('chase01','myBar01')
 	&& chBarrierDown('chase01','myBar02')
 	&& chBarrierDown('chase01','myBar03')
@@ -571,11 +650,11 @@ onKeyDown="{
 	&& chBarrierDown('chase01','myBar11')
 	&& chBarrierDown('chase01','myBar12')) {
 	document.getElementById('chase01').style.top =
-	parseInt(document.getElementById('chase01').style.top) +100
+	parseInt(document.getElementById('chase01').style.top) +2*parseInt(document.unitY)
 	myCheckAll()
 	}else{
 	if (myRight == 's' 
-	&& parseInt(document.getElementById('chase01').style.top)<=window.innerHeight-100
+	&& parseInt(document.getElementById('chase01').style.top)<=window.innerHeight-2*parseInt(document.unitY)
 	&& myBarrierDown('chase01','myBar01')
 	&& myBarrierDown('chase01','myBar02')
 	&& myBarrierDown('chase01','myBar03')
@@ -589,7 +668,7 @@ onKeyDown="{
 	&& myBarrierDown('chase01','myBar11')
 	&& myBarrierDown('chase01','myBar12')) {
 	document.getElementById('chase01').style.top =
-	parseInt(document.getElementById('chase01').style.top) +50
+	parseInt(document.getElementById('chase01').style.top) +parseInt(document.unitY)
 	myCheckAll()
 	}
 	}
@@ -626,7 +705,7 @@ id="chase01" style="position: absolute; left: 50; top: 50; width: 50; height: 50
  id="kill06" style="position: absolute; left: 1150; top: 200; width: 50; height: 50">
 
 <img title="car01" src="Car01.png"
- id="car01" style="position: absolute; left: 0; top: 700; width: 100; height: 50">
+ id="car01" style="position: absolute; left: 100; top: 700; width: 100; height: 50">
 
 <img title="car02" src="Car02.png"
  id="car02" style="position: absolute; left: 100; top: 500; width: 50; height: 100">
