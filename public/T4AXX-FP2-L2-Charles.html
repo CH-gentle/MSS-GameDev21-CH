@@ -14,6 +14,8 @@ document.mySpeed = 50
 
 document.myTimer = 0;
 
+let Bgm = new Audio('Rage Of Dust.mp3') 
+
 function myHitOther(my1,my2){
    left1   = parseInt(document.getElementById(my1).style.left)
    right1  = left1 + parseInt(document.getElementById(my1).style.width)
@@ -365,6 +367,8 @@ function myResize(span){
 onLoad="{
 	clearInterval(document.myTimer)                    
 	document.mytimer = setInterval( myAuto, document.mySpeed)
+
+	Bgm.play()
 
 	myResize('my1')
 	myResize('chase01')
