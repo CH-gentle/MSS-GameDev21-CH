@@ -214,18 +214,21 @@ function myCheckAll(){
 	myBadEnd()
 	}
 	if(myHitOther('my1','ray01')){
+	document.getElementById('ray01').style.backgroundColor = "red'"
 	myBadEnd()
 	}
 	if(myHitOther('my1','snipe02')){
 	myBadEnd()
 	}
 	if(myHitOther('my1','ray02')){
+	document.getElementById('ray02').style.backgroundColor = "red"
 	myBadEnd()
 	}
 	if(myHitOther('my1','snipe03')){
 	myBadEnd()
 	}
 	if(myHitOther('my1','ray03')){
+	document.getElementById('ray03').style.backgroundColor = "red"
 	myBadEnd()
 	}
 	if(myHitOther('my1','chase01')){
@@ -335,13 +338,13 @@ function myCheckAll(){
 function myBadEnd(){
 	alert('You failed')
 	document.getElementById('my1').style.left = -400
-	location = location
+	location = 'T4AXX-FP2-BE-Charles.html'
 }
 
 function myNextlevel(){
 	alert('You won')
 	document.getElementById('my1').style.left = -400
-	//location = '...'
+	location = 'T4AXX-FP2-WL-Charles.html'
 }
 
 function myAuto(){
@@ -403,6 +406,8 @@ onLoad="{
 	myResize('myBar11')
 	myResize('myBar12')
 	myResize('safe01')
+	myResize('title01')
+	myResize('title02')
 }"
 
 onResize="{
@@ -648,8 +653,7 @@ onKeyDown="{
 }">
 
 
-<h1 align=center>T4A01-Final Project Level02-Charles</h1>
-<h3 align=center>Level 02</h3>
+
 
 <span style="position: absolute; left: 0; top: 0; width: 100; height: 50">Version 0.0.0</span>
 
@@ -697,51 +701,57 @@ id="chase01" style="position: absolute; left: 50; top: 50; width: 50; height: 50
 
 <img title="snipe01" src="Sniper02.png"
  id="snipe01" style="position: absolute; left: 400; top: 500; width: 50; height: 50">
-<span id="ray01" style="position: absolute; left: 0; top: 521; width: 400; height: 1;"></span>
+<span id="ray01" style="position: absolute; left: 0; top: 521; width: 400; height: 1;background-color=white;"></span>
 
 <img title="snipe02" src="Sniper02.png"
  id="snipe02" style="position: absolute; left: 1000; top: 0; width: 50; height: 50">
-<span id="ray02" style="position: absolute; left: 700; top: 21; width: 300; height: 1;"></span>
+<span id="ray02" style="position: absolute; left: 700; top: 21; width: 300; height: 1;background-color=white;"></span>
 
 <img title="snipe03" src="Sniper03.png"
  id="snipe03" style="position: absolute; left: 600; top: 250; width: 50; height: 50">
-<span id="ray03" style="position: absolute; left: 621; top: 0; width: 1; height: 250;"></span>
+<span id="ray03" style="position: absolute; left: 621; top: 0; width: 1; height: 250;background-color=white;"></span>
 
-<span id="myBar01" style="position:absolute; left:100; top:150; width: 450; height: 50; background-color: orange;">
-Wall(myBar01)</span>
+<span id="myBar01" title="myBar01" style="position:absolute; left:100; top:150; width: 450; height: 50; background-color: orange;">
+</span>
 
-<span id="myBar02" style="position:absolute; left:100; top:200; width: 50; height: 150; background-color: orange;">
-Wall(myBar02)</span>
+<span id="myBar02" title="myBar02" style="position:absolute; left:100; top:200; width: 50; height: 150; background-color: orange;">
+</span>
 
-<span id="myBar03" style="position:absolute; left:650; top:0; width: 50; height: 400; z-index: -1; background-color: orange;">
-Wall(myBar03)</span>
+<span id="myBar03" title="myBar03" style="position:absolute; left:650; top:0; width: 50; height: 400; z-index: -1; background-color: orange;">
+</span>
 
-<span id="myBar04" style="position:absolute; left:700; top:250; width: 200; height: 50; background-color: orange;">
-Wall(myBar04)</span>
+<span id="myBar04" title="myBar04" style="position:absolute; left:700; top:250; width: 200; height: 50; background-color: orange;">
+</span>
 
-<span id="myBar05" style="position:absolute; left:900; top:250; width: 50; height: 250; background-color: orange;">
-Wall(myBar05)</span>
+<span id="myBar05" title="myBar05" style="position:absolute; left:900; top:250; width: 50; height: 250; background-color: orange;">
+</span>
 
-<span id="myBar06" style="position:absolute; left:800; top:100; width: 650; height: 50; background-color: orange;">
-Wall(myBar06)</span>
+<span id="myBar06" title="myBar06" style="position:absolute; left:800; top:100; width: 650; height: 50; background-color: orange;">
+</span>
 
-<span id="myBar07" style="position:absolute; left:1000; top:150; width: 50; height: 150; background-color: orange;">
-Wall(myBar07)</span>
+<span id="myBar07" title="myBar07" style="position:absolute; left:1000; top:150; width: 50; height: 150; background-color: orange;">
+</span>
 
-<span id="myBar08" style="position:absolute; left:1050; top:250; width: 400; height: 50; background-color: orange;">
-Wall(myBar08)</span>
+<span id="myBar08" title="myBar08" style="position:absolute; left:1050; top:250; width: 400; height: 50; background-color: orange;">
+</span>
 
-<span id="myBar09" style="position:absolute; left:500; top:300; width: 50; height: 300; background-color: orange;">
-Wall(myBar09)</span>
+<span id="myBar09" title="myBar09" style="position:absolute; left:500; top:300; width: 50; height: 300; background-color: orange;">
+</span>
 
-<span id="myBar10" style="position:absolute; left:1050; top:350; width: 50; height: 350; background-color: orange;">
-Wall(myBar10)</span>
+<span id="myBar10" title="myBar10" style="position:absolute; left:1050; top:350; width: 50; height: 350; background-color: orange;">
+</span>
 
-<span id="myBar11" style="position:absolute; left:150; top:600; width: 900; height: 50; background-color: orange;">
-Wall(myBar11)</span>
+<span id="myBar11" title="myBar11" style="position:absolute; left:150; top:600; width: 900; height: 50; background-color: orange;">
+</span>
 
-<span id="myBar12" style="position:absolute; left:1200; top:450; width: 400; height: 50; background-color: orange;">
-Wall(myBar12)</span>
+<span id="myBar12" title="myBar12" style="position:absolute; left:1200; top:450; width: 400; height: 50; background-color: orange;">
+</span>
+
+<span id="title01" style="z-index=10; position:absolute; left:810; top:80">
+<h1>T4A01-Final Project Level02-Charles</h1></span>
+
+<span id="title02" style="z-index=10; position:absolute; left:1050; top:240">
+<h3 >Level 02</h3></span>
 
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe_ptU4QLx5Jwz6i4WSVehnsfC4Tthfrbhbg&usqp=CAU" 
 id="safe01" style="position: absolute; left: 1050; top: 200; width: 100; height: 50">

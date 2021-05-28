@@ -148,14 +148,15 @@ function myCheckAll(){
 }
 
 function myBadEnd(){
+	document.getElementById('my1').style.left = -400
 	alert('You failed')
-	//location = 'https://ch-gentle.github.io/MSS-GameDev21-CH/public/T4AXX-FP2-L1-Charles.html'
+	location = 'T4AXX-FP2-BE-Charles.html'
 	}
 
 function myNextlevel(){
 	document.getElementById('my1').style.left = -400
 	alert('You won')
-	//location = 'https://ch-gentle.github.io/MSS-GameDev21-CH/public/T4AXX-FP2-L2-Charles.html'
+	location = 'T4AXX-FP2-L2-Charles.html'
 	}
 
 function myAuto(my1,my2){
@@ -171,8 +172,8 @@ onLoad="{
 	clearInterval(document.myTimer)                    
 	document.mytimer = setInterval( myAuto, document.mySpeed, 'car01','car02')
 
-	document.getElementById('flag01').style.left = window.innerWidth - 100
-	document.getElementById('flag01').style.top = window.innerHeight - 100
+	document.getElementById('flag01').style.left = window.innerWidth - 110
+	document.getElementById('flag01').style.top = window.innerHeight - 110
 	document.getElementById('ray01').style.width = window.innerWidth - 1150
 }"
 
@@ -266,29 +267,29 @@ id="my1" style="position: absolute; left: 200; top: 200; width: 50; height: 50">
 <img title="snipe01" src="Sniper01.png"
  id="snipe01" style="position: absolute; left: 1000; top: 700; width: 50; height: 50">
 
-<span id="myBar01" style="position:absolute; left:100; top:100; width: 100; height: 200; background-color: orange;">
-Wall(myBar01)</span>
+<span id="myBar01" title="myBar01" style="position:absolute; left:100; top:100; width: 100; height: 200; background-color: orange;">
+</span>
 
-<span id="myBar02" style="position:absolute; left:300; top:250; width: 700; height: 50; background-color: orange;">
-Wall(myBar02)</span>
+<span id="myBar02" title="myBar02" style="position:absolute; left:300; top:250; width: 700; height: 50; background-color: orange;">
+</span>
 
-<span id="myBar03" style="position:absolute; left:1250; top:0; width: 50; height: 500; background-color: orange;">
-Wall(myBar03)</span>
+<span id="myBar03" title="myBar03" style="position:absolute; left:1250; top:0; width: 50; height: 500; background-color: orange;">
+</span>
 
-<span id="myBar04" style="position:absolute; left:300; top:400; width: 750; height: 50; background-color: orange;">
-Wall(myBar04)</span>
+<span id="myBar04" title="myBar04" style="position:absolute; left:300; top:400; width: 750; height: 50; background-color: orange;">
+</span>
 
-<span id="myBar05" style="position:absolute; left:1050; top:350; width: 50; height: 100; background-color: orange;">
-Wall(myBar05)</span>
+<span id="myBar05" title="myBar05" style="position:absolute; left:1050; top:350; width: 50; height: 100; background-color: orange;">
+</span>
 
-<span id="myBar06" style="position:absolute; left:100; top:600; width: 300; height: 50; background-color: orange;">
-Wall(myBar06)</span>
+<span id="myBar06" title="myBar06" style="position:absolute; left:100; top:600; width: 300; height: 50; background-color: orange;">
+</span>
 
-<span id="myBar07" style="position:absolute; left:400; top:550; width: 50; height: 100; background-color: orange;">
-Wall(myBar07)</span>
+<span id="myBar07" title="myBar07" style="position:absolute; left:400; top:550; width: 50; height: 100; background-color: orange;">
+</span>
 
-<span id="myBar08" style="position:absolute; left:900; top:450; width: 50; height: 250; background-color: orange;">
-Wall(myBar08)</span>
+<span id="myBar08" title="myBar08" style="position:absolute; left:900; top:450; width: 50; height: 250; background-color: orange;">
+</span>
 
 <img src="Flag01.png" 
 id="flag01" style="position: absolute; left: 1000; top: 1000; width: 100; height: 100">
