@@ -1,11 +1,13 @@
+<script>
+let Bgm = new Audio('Freesia.mp3') 
+</script>
+
 <body
-
-let Bgm = new Audio('') 
-
 onLoad="{
-	//Bgm.play()
-	//document.getElementById('').style.left = window.innerWidth
-	//document.getElementById('').style.top = window.innerHeight
+	Bgm.volume = 0.9
+	Bgm.play()
+	document.getElementById('BG').style.width = window.innerWidth-100
+	document.getElementById('BG').style.height = window.innerHeight-100
 }">
 
 <span style="z-index:1; "><h1 align=center>Game Over</h1></span>
@@ -18,5 +20,9 @@ style="z-index:1; position: absolute; left: 50; top: 50; width: 100; height: 50"
 	location = 'T4AXX-FP2-L2-Charles.html'
 }"
 style="z-index:1; position: absolute; left: 50; top: 150; width: 100; height: 50">
+
+<video id="BG" left="0" height="0" width="800" height="500" autoplay muted>
+  <source src="BE.mp4" type="video/mp4">
+</video>
 
 </body>

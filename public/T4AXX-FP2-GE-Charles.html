@@ -1,14 +1,16 @@
+<script>
+let Bgm = new Audio('SurvivorE.mp3') 
+</script>
+
 <body
-
-let Bgm = new Audio('') 
-
 onLoad="{
-	//Bgm.play()
-	//document.getElementById('').style.left = window.innerWidth
-	//document.getElementById('').style.top = window.innerHeight
+	Bgm.volume = 0.5
+	Bgm.play()
+	document.getElementById('BG').style.width = window.innerWidth
+	document.getElementById('BG').style.height = window.innerHeight
 }">
-<h1 align=center>Congratulations</h1>
-<span align=center style="z-index:1; position: absolute; left: 450; top: 100">
+<h1 align=center style="color: white">Congratulations</h1>
+<span align=center style="color: white; z-index:1; position: absolute; left: 450; top: 100">
 <b>Director:</b><br>
 Charles<br><br>
 
@@ -27,5 +29,7 @@ Lance<br>
 Mobile Suit Gundam: Iron-Blooded Orphans, 機動戦士ガンダム 鉄血のオルフェンズ<br>
 Steins;Gate<br>
 </span>
+
+<img src="GE.gif" id="BG" style="z-index:-1; position: absolute; left: 0; top: 0; width: 1000; height: 600">
 
 </body>
