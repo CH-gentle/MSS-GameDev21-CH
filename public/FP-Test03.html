@@ -6,6 +6,8 @@ document.mySpeed = 50
 
 document.myTimer = 0;
 
+let Bgm = new Audio('Raise Your Flag.mp3')
+
 function myHitOther(my1,my2){
    left1   = parseInt(document.getElementById(my1).style.left)
    right1  = left1 + parseInt(document.getElementById(my1).style.width)
@@ -169,6 +171,9 @@ function myAuto(my1,my2){
 
 <body
 onLoad="{
+	Bgm.volume = 0.5
+	Bgm.play()
+
 	clearInterval(document.myTimer)                    
 	document.mytimer = setInterval( myAuto, document.mySpeed, 'car01','car02')
 
