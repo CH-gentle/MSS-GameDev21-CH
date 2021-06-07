@@ -15,6 +15,9 @@ document.mySpeed = 50
 document.myTimer = 0;
 
 let Bgm = new Audio('Rage Of Dust.mp3') 
+let Fire = new Audio('M82.mp3') 
+let Burst = new Audio('Burst.mp3') 
+let Stop = new Audio('Stop.mp3') 
 
 function myHitOther(my1,my2){
    left1   = parseInt(document.getElementById(my1).style.left)
@@ -175,67 +178,61 @@ function chBarrierDown(my1,my2){
 
 function myCheckAll(){
 	if(myHitOther('my1','kill01')){
-	myBadEnd()
+	ARKill()
 	}
 	if(myHitOther('my1','kill02')){
-	myBadEnd()
+	ARKill()
 	}
 	if(myHitOther('my1','kill03')){
-	myBadEnd()
+	ARKill()
 	}
 	if(myHitOther('my1','kill04')){
-	myBadEnd()
+	ARKill()
 	}
 	if(myHitOther('my1','kill05')){
-	myBadEnd()
+	ARKill()
 	}
 	if(myHitOther('my1','kill06')){
-	myBadEnd()
+	ARKill()
 	}
 	if(myHitOther('my1','car01')){
-	myBadEnd()
+	CarKill()
 	}
 	if(myHitOther('my1','car02')){
-	myBadEnd()
+	CarKill()
 	}
 	if(myHitOther('my1','car03')){
-	myBadEnd()
+	CarKill()
 	}
 	if(myHitOther('my1','car04')){
-	myBadEnd()
+	CarKill()
 	}
 	if(myHitOther('my1','car05')){
-	myBadEnd()
+	CarKill()
 	}
 	if(myHitOther('my1','car06')){
-	myBadEnd()
+	CarKill()
 	}
 	if(myHitOther('my1','snipe01')){
-	myBadEnd()
+	sniperKill('ray01')
 	}
 	if(myHitOther('my1','ray01')){
-	document.getElementById('ray01').style.backgroundColor = "red"
-	document.getElementById('my1').style.left = -400
-	setTimeout(myBadEnd,1000)
+	sniperKill('ray01')
 	}
 	if(myHitOther('my1','snipe02')){
-	myBadEnd()
+	sniperKill('ray02')
 	}
 	if(myHitOther('my1','ray02')){
-	document.getElementById('ray02').style.backgroundColor = "red"
-	document.getElementById('my1').style.left = -400
-	setTimeout(myBadEnd,1000)
+	sniperKill('ray02')
 	}
 	if(myHitOther('my1','snipe03')){
-	myBadEnd()
+	sniperKill('ray03')
 	}
 	if(myHitOther('my1','ray03')){
-	document.getElementById('ray03').style.backgroundColor = "red"
-	document.getElementById('my1').style.left = -400
-	setTimeout(myBadEnd,1000)
+	sniperKill('ray03')
 	}
 	if(myHitOther('my1','chase01')){
-	myBadEnd()
+	ARKill()
 	}
 	if(myHitOther('my1','safe01')){
 	myNextlevel()
@@ -342,6 +339,29 @@ function myBadEnd(){
 	alert('You failed')
 	document.getElementById('my1').style.left = -400
 	location = 'T4AXX-FP2-BE-Charles.html'
+}
+
+function sniperKill(ray){
+	Bgm.pause()
+	Fire.play()
+	document.getElementById(ray).style.backgroundColor = "red"
+	document.getElementById('my1').style.left = -400
+	setTimeout(myBadEnd,1000)
+}
+
+function ARKill(){
+	Bgm.pause()
+	Burst.play()
+	document.getElementById('my1').style.left = -400
+	setTimeout(myBadEnd,1000)
+}
+
+function CarKill(){
+	Bgm.pause()
+	Stop.play()
+	setTimeout(function(){Stop.pause(); Burst.play()},1000)
+	document.getElementById('my1').style.left = -400
+	setTimeout(myBadEnd,2000)
 }
 
 function myNextlevel(){
