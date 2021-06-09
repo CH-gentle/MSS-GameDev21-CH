@@ -341,18 +341,26 @@ function myBadEnd(){
 	location = 'T4AXX-FP2-BE-Charles.html'
 }
 
+function Blood(){
+	document.getElementById('Blood').style.top =
+	parseInt(document.getElementById('my1').style.top);
+	document.getElementById('Blood').style.left =
+	parseInt(document.getElementById('my1').style.left);
+	document.getElementById('my1').style.left = -400
+}
+
 function sniperKill(ray){
 	Bgm.pause()
 	Fire.play()
 	document.getElementById(ray).style.backgroundColor = "red"
-	document.getElementById('my1').style.left = -400
+	Blood()
 	setTimeout(myBadEnd,1000)
 }
 
 function ARKill(){
 	Bgm.pause()
 	Burst.play()
-	document.getElementById('my1').style.left = -400
+	Blood()
 	setTimeout(myBadEnd,1000)
 }
 
@@ -360,7 +368,7 @@ function CarKill(){
 	Bgm.pause()
 	Stop.play()
 	setTimeout(function(){Stop.pause(); Burst.play()},1000)
-	document.getElementById('my1').style.left = -400
+	Blood()
 	setTimeout(myBadEnd,2000)
 }
 
@@ -417,6 +425,7 @@ onLoad="{
 	myResize('ray01')
 	myResize('ray02')
 	myResize('ray03')
+	myResize('Blood')
 	myResize('myBar01')
 	myResize('myBar02')
 	myResize('myBar03')
@@ -734,6 +743,8 @@ id="chase01" style="position: absolute; left: 50; top: 50; width: 50; height: 50
 <img title="snipe03" src="Sniper03.png"
  id="snipe03" style="position: absolute; left: 600; top: 250; width: 50; height: 50">
 <span id="ray03" style="position: absolute; left: 621; top: 0; width: 1; height: 250;background-color=white;"></span>
+
+<img id="Blood" src="Blood.jpg" style="z-index:-1; position: absolute; left: -100; top: 250; width: 50; height: 50">
 
 <span id="myBar01" title="myBar01" style="position:absolute; left:100; top:150; width: 450; height: 50; background-color: orange;">
 </span>
