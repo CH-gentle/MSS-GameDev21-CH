@@ -1,16 +1,28 @@
 <script>
 let Bgm = new Audio('SurvivorE.mp3') 
+
+document.unitX = parseInt(parseInt(window.innerWidth)/32)
+document.unitY = parseInt((parseInt(window.innerHeight)*700/757)/14)
+
+function myResize(span){
+	document.getElementById(span).style.left = (parseInt(document.getElementById(span).style.left)/50)*parseInt(document.unitX)
+	document.getElementById(span).style.top = (parseInt(document.getElementById(span).style.top)/50)*parseInt(document.unitY)
+}
 </script>
 
 <body
 onLoad="{
+	myResize('text01')
 	Bgm.volume = 0.5
 	Bgm.play()
 	document.getElementById('BG').style.width = window.innerWidth
 	document.getElementById('BG').style.height = window.innerHeight
+}"
+onResize="{
+	location = location
 }">
 <h1 align=center style="color: white">Congratulations</h1>
-<span align=center style="color: white; z-index:1; position: absolute; left: 450; top: 100">
+<span id="text01" align=center style="color: white; z-index:1; position: absolute; left: 500; top: 100">
 <b>Director:</b><br>
 Charles<br><br>
 
