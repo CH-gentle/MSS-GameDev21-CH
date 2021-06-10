@@ -1,27 +1,43 @@
 <script>
 let Bgm = new Audio('Freesia.mp3') 
+
+document.unitX = parseInt(parseInt(window.innerWidth)/32)
+document.unitY = parseInt((parseInt(window.innerHeight)*700/757)/14)
+
+function myResize(span){
+	document.getElementById(span).style.width = (parseInt(document.getElementById(span).style.width)/50)*parseInt(document.unitX)
+	document.getElementById(span).style.height = (parseInt(document.getElementById(span).style.height)/50)*parseInt(document.unitY)
+	document.getElementById(span).style.left = (parseInt(document.getElementById(span).style.left)/50)*parseInt(document.unitX)
+	document.getElementById(span).style.top = (parseInt(document.getElementById(span).style.top)/50)*parseInt(document.unitY)
+}
 </script>
 
 <body
 onLoad="{
 	Bgm.volume = 0.9
 	Bgm.play()
-	document.getElementById('BG').style.width = window.innerWidth-100
-	document.getElementById('BG').style.height = window.innerHeight-100
+	myResize('button01')
+	myResize('button02')
+	document.getElementById('BG').style.width = window.innerWidth-50
+	document.getElementById('BG').style.height = window.innerHeight-75
+}"
+onResize="{
+	location = location
 }">
 
 <span style="z-index:1; "><h1 align=center>Game Over</h1></span>
 
-<input type=button value="Level01" onClick="{
+<input id="button01" type=button value="Level01" onClick="{
 	location = 'T4AXX-FP2-L1-Charles.html'
 }"
 style="z-index:1; position: absolute; left: 50; top: 50; width: 100; height: 50">
-<input type=button value="Level02" onClick="{
+
+<input id="button02" type=button value="Level02" onClick="{
 	location = 'T4AXX-FP2-L2-Charles.html'
 }"
 style="z-index:1; position: absolute; left: 50; top: 150; width: 100; height: 50">
 
-<video id="BG" left="0" height="0" width="800" height="500" autoplay muted>
+<video id="BG" left="0" top="0" width="1500" height="600" autoplay muted>
   <source src="BE.mp4" type="video/mp4">
 </video>
 
