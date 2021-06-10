@@ -1,21 +1,43 @@
+<script>
+document.unitX = parseInt(parseInt(window.innerWidth)/32)
+document.unitY = parseInt((parseInt(window.innerHeight)*700/757)/14)
+
+function myResize(span){
+	document.getElementById(span).style.width = (parseInt(document.getElementById(span).style.width)/50)*parseInt(document.unitX)
+	document.getElementById(span).style.height = (parseInt(document.getElementById(span).style.height)/50)*parseInt(document.unitY)
+	document.getElementById(span).style.left = (parseInt(document.getElementById(span).style.left)/50)*parseInt(document.unitX)
+	document.getElementById(span).style.top = (parseInt(document.getElementById(span).style.top)/50)*parseInt(document.unitY)
+}
+</script>
+
+<body
+onLoad="{
+	myResize('text01')
+	myResize('my1')
+	myResize('button01')
+}"
+onResize="{
+	location = location
+}">
 <h1 align=center>T4A01-Final Project Level02-Charles</h1>
 <h3 align=center>Introduction</h3>
-<span style="position: absolute; left: 50; top: 150; width: 700; height: 500">
+<span id="text01" style="position: absolute; left: 50; top: 150; width: 800; height: 500">
 You are the leader of Tekkadan, Orga Itsuka. You recieved an [D-mail] from your friend Mikazuki three days later. 
 You are told that you will get assassinated today in this world line. <br><br>
 Enable to reach the world line you will survive, we will call that world line [Steins;Gate] for now. <br>
-You need to <b>Raise Your Flag</b> to report the emergency to Chad your driver. <br>
-Then you need to escape from the assassinators' encirclement and reach Chad's armored car to make your way back. <br><br>
+You need to <b>Raise Your Flag</b> to report the emergency to Chad, your driver. <br>
+Then you need to escape from the assassinators' encirclement and reach Chad's armored car to make your way out. <br><br>
 [D-mail]: A mail send from future to the past. <br><br>
 You can use W A S D to control your character, have fun.<br>
 Recommended browser: Micosoft Edge, <br>
 Chrome has some different policies about Autoplay which might cause audio fail to run properly. 
 </span>
 
-<img title="my1" src="Orga01.jpg" 
-id="my1" style="position: absolute; left: 800; top: 150; width: 500; height: 500">
+<img title="Orga" src="Orga01.jpg" 
+id="my1" style="position: absolute; left: 1000; top: 100; width: 600; height: 600">
 
-<input type=button value="Start" onClick="{
+<input id="button01" type=button value="Start" onClick="{
 	location = 'T4AXX-FP2-L1-Charles.html'
 }"
-style="position: absolute; left: 250; top: 450; width: 100; height: 50">
+style="position: absolute; left: 750; top: 700; width: 100; height: 50">
+</body>
